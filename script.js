@@ -163,26 +163,30 @@ fbForm.addEventListener('submit', async e => {
   send.disabled = false;
 });
 
-// ---------- счётчик скачиваний ----------
-// GitHub сам считает, сколько раз скачали файл из релизов. Спрашиваем его напрямую,
-// а если не ответил (лимит запросов, сеть) — у нашего сервера, который помнит последнее число.
+// ---------- счётчик скачиваний и номер версии ----------
+// GitHub сам считает, сколько раз скачали файл из релизов, и знает последнюю версию. Спрашиваем его напрямую,
+// а если не ответил (лимит запросов, сеть) — у нашего сервера, который помнит последний ответ.
 const REPO = 'fotomagazin/fotomagazin', SHOW_FROM = 1;   // SHOW_FROM — с какого числа показывать счётчик
 const plural = (n, f) => f[n % 10 === 1 && n % 100 !== 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2];
-async function downloadCount() {
-  try { const c = JSON.parse(localStorage['fm-dl'] || 'null'); if (c && Date.now() - c.t < 10 * 60 * 1000) return c.n; } catch (e) {}
-  let n = null;
+async function releaseInfo() {
+  try { const c = JSON.parse(localStorage['fm-rel'] || 'null'); if (c && Date.now() - c.t < 10 * 60 * 1000) return c; } catch (e) {}
+  let n = null, tag = null;
   try { const r = await fetch(`https://api.github.com/repos/${REPO}/releases?per_page=100`);
-    if (r.ok) n = (await r.json()).reduce((s, rel) => s + rel.assets.reduce((a, x) => a + x.download_count, 0), 0); } catch (e) {}
-  if (n === null) try { const d = await (await fetch(FEEDBACK_API.replace('/feedback', '/downloads'))).json(); n = d.count; } catch (e) {}
-  if (n !== null) try { localStorage['fm-dl'] = JSON.stringify({ n, t: Date.now() }); } catch (e) {}
-  return n;
+    if (r.ok) { const rels = await r.json(); n = rels.reduce((s, rel) => s + rel.assets.reduce((a, x) => a + x.download_count, 0), 0);
+      const L = rels.find(x => !x.draft && !x.prerelease); tag = L && L.tag_name; } } catch (e) {}
+  if (n === null) try { const d = await (await fetch(FEEDBACK_API.replace('/feedback', '/downloads'))).json(); n = d.count; tag = d.latest && d.latest.tag; } catch (e) {}
+  const info = { n, tag, t: Date.now() };
+  if (n !== null) try { localStorage['fm-rel'] = JSON.stringify(info); } catch (e) {}
+  return info;
 }
-downloadCount().then(n => {
-  if (n === null || n < SHOW_FROM) return;   // нет данных или пока мало — просто не показываем
+releaseInfo().then(({ n, tag }) => {
+  // номер версии на сайте — всегда как у последнего релиза («v0.2.0» → «0.2»)
+  if (tag) $$('[data-ver]').forEach(el => el.textContent = tag.replace(/^v/, '').replace(/\.0$/, ''));
+  if (n === null || n < SHOW_FROM) return;   // нет данных или пока мало — счётчик просто не показываем
   $$('.dl-count').forEach(el => {
     el.hidden = false; $('span', el).textContent = plural(n, ['скачивание', 'скачивания', 'скачиваний']);
-    const b = $('b', el), t0 = performance.now(), dur = reduce ? 0 : 1600;
-    requestAnimationFrame(() => el.classList.add('show'));
+    const b = $('b', el), t0 = performance.now(), dur = reduce || document.hidden ? 0 : 1600;   // в фоновой вкладке — сразу итог
+    b.textContent = n.toLocaleString('ru-RU'); requestAnimationFrame(() => el.classList.add('show'));
     (function step(t) { const k = dur ? clamp((t - t0) / dur) : 1; b.textContent = Math.round(n * (1 - Math.pow(1 - k, 3))).toLocaleString('ru-RU');
       if (k < 1) requestAnimationFrame(step); })(t0);
   });
