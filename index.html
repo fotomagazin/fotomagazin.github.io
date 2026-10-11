@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Фотомагазин — фоторедактор со слоями прямо в браузере</title>
-<meta name="description" content="Бесплатный фоторедактор со слоями, масками, Camera Raw, кадрированием, выделением и текстом. Один файл, работает в браузере — без установки и регистрации.">
+<meta name="description" content="Бесплатный фоторедактор со слоями, масками, коррекцией света и цвета, кадрированием, выделением и текстом. Один файл, работает в браузере — без установки и регистрации.">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Фотомагазин — фоторедактор со слоями">
-<meta property="og:description" content="Слои, маски, Camera Raw, кадрирование и текст. Один файл, работает в браузере. Бесплатно.">
+<meta property="og:description" content="Слои, маски, свет и цвет, кадрирование и текст. Один файл, работает в браузере. Бесплатно.">
 <meta property="og:image" content="assets/hero.jpg">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
   <div class="nav-in">
     <a class="brand" href="#top"><i class="logo"></i>Фотомагазин<span class="beta">Бета</span></a>
     <div class="links">
-      <a href="#layers">Слои</a><a href="#raw">Camera Raw</a><a href="#crop">Инструменты</a><a href="#together">Участвовать</a><a href="#faq">Вопросы</a>
+      <a href="#layers">Слои</a><a href="#raw">Свет и цвет</a><a href="#crop">Инструменты</a><a href="#together">Участвовать</a><a href="#faq">Вопросы</a>
     </div>
     <a class="btn btn-sm" href="https://github.com/fotomagazin/fotomagazin/releases/latest/download/fotomagazin.html">Скачать</a>
   </div>
@@ -46,14 +46,14 @@
     <div class="glow" aria-hidden="true"></div>
     <div class="window" id="heroWin">
       <div class="bar"><i></i><i></i><i></i><span>Алтай.fotomag — Фотомагазин</span></div>
-      <img src="assets/hero.jpg" width="3200" height="2000" alt="Окно Фотомагазина: пейзаж с горами на закате, текстовые слои и панель Camera Raw">
+      <img src="assets/hero.jpg" width="3200" height="2000" alt="Окно Фотомагазина: пейзаж с горами на закате, текстовые слои и панель «Свет и цвет»">
     </div>
   </div>
 </header>
 
 <!-- ========== манифест ========== -->
 <section class="statement wrap">
-  <p id="statement">Слои. Маски. Camera Raw. Кадрирование. Текст. Всё, что нужно для&nbsp;фотографии, — и&nbsp;ничего лишнего.</p>
+  <p id="statement">Слои. Маски. Свет и&nbsp;цвет. Кадрирование. Текст. Всё, что нужно для&nbsp;фотографии, — и&nbsp;ничего лишнего.</p>
 </section>
 
 <section class="stats wrap">
@@ -85,12 +85,12 @@
   </div>
 </section>
 
-<!-- ========== Camera Raw ========== -->
+<!-- ========== свет и цвет ========== -->
 <section class="feature center" id="raw">
   <div class="wrap">
-    <p class="eyebrow reveal">Camera Raw</p>
+    <p class="eyebrow reveal">Коррекция фото</p>
     <h2 class="reveal" style="--d:.05s">Свет и&nbsp;цвет —<br>под&nbsp;полным контролем.</h2>
-    <p class="body narrow reveal" style="--d:.1s">Температура, экспозиция, тени, светлые, красочность — как в&nbsp;Lightroom. Плюс цветовые круги для&nbsp;теней, средних тонов и&nbsp;светов. Всё считается на&nbsp;видеокарте — мгновенно, даже на&nbsp;снимках в&nbsp;50&nbsp;мегапикселей.</p>
+    <p class="body narrow reveal" style="--d:.1s">Температура, экспозиция, контраст, тени, светлые, красочность — восемь ползунков, чтобы довести снимок до&nbsp;ума. Плюс цветовые круги для&nbsp;теней, средних тонов и&nbsp;светов. Всё считается на&nbsp;видеокарте — мгновенно, даже на&nbsp;снимках в&nbsp;50&nbsp;мегапикселей.</p>
     <div class="ba reveal" id="ba" style="--d:.15s">
       <img src="assets/after.jpg" width="2400" height="1600" alt="После обработки: тёплый яркий закат" loading="lazy">
       <div class="ba-before"><img src="assets/before.jpg" width="2400" height="1600" alt="До обработки: блёклый холодный снимок" loading="lazy"></div>
@@ -100,7 +100,7 @@
     </div>
     <p class="hint reveal">Потяните, чтобы сравнить</p>
     <div class="duo">
-      <figure class="card reveal"><img src="assets/raw.jpg" width="606" height="688" alt="Ползунки Camera Raw" loading="lazy">
+      <figure class="card reveal"><img src="assets/raw.jpg" width="606" height="688" alt="Ползунки панели «Свет и цвет»" loading="lazy">
         <figcaption><b>Восемь ползунков.</b> Двойной клик — сброс в&nbsp;ноль.</figcaption></figure>
       <figure class="card reveal" style="--d:.1s"><img src="assets/wheels.jpg" width="606" height="482" alt="Цветовые круги: тени, средние, света" loading="lazy">
         <figcaption><b>Цветовые круги.</b> Тёплые света и&nbsp;холодные тени — как в&nbsp;кино.</figcaption></figure>
