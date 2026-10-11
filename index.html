@@ -9,8 +9,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Фотомагазин — фоторедактор со слоями">
 <meta property="og:description" content="Слои, маски, свет и цвет, кадрирование и текст. Один файл, работает в браузере. Бесплатно.">
-<meta property="og:image" content="assets/hero.jpg">
-<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<meta property="og:image" content="assets/hero.jpg?v=2">
+<link rel="icon" href="assets/icon.svg?v=2" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Unbounded:wght@700&family=Playfair+Display:ital,wght@1,700&family=Caveat:wght@700&family=Lobster&display=swap">
@@ -46,7 +46,7 @@
     <div class="glow" aria-hidden="true"></div>
     <div class="window" id="heroWin">
       <div class="bar"><i></i><i></i><i></i><span>Алтай.fotomag — Фотомагазин</span></div>
-      <img src="assets/hero.jpg" width="3200" height="2000" alt="Окно Фотомагазина: пейзаж с горами на закате, текстовые слои и панель «Свет и цвет»">
+      <img src="assets/hero.jpg?v=2" width="3200" height="2000" alt="Окно Фотомагазина: пейзаж с горами на закате, текстовые слои и панель «Свет и цвет»">
     </div>
   </div>
 </header>
@@ -78,7 +78,7 @@
       </ul>
     </div>
     <div class="shot-stack reveal" style="--d:.1s">
-      <div class="card zoom"><img src="assets/layers.jpg" width="606" height="370" alt="Панель слоёв: текстовые слои и фото" loading="lazy"></div>
+      <div class="card zoom"><img src="assets/layers.jpg?v=2" width="606" height="370" alt="Панель слоёв: текстовые слои и фото" loading="lazy"></div>
       <div class="tag t1"><svg viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>Текст — всегда отдельный слой</div>
       <div class="tag t2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor"/></svg>Маски без потерь</div>
     </div>
@@ -92,17 +92,17 @@
     <h2 class="reveal" style="--d:.05s">Свет и&nbsp;цвет —<br>под&nbsp;полным контролем.</h2>
     <p class="body narrow reveal" style="--d:.1s">Температура, экспозиция, контраст, тени, светлые, красочность — восемь ползунков, чтобы довести снимок до&nbsp;ума. Плюс цветовые круги для&nbsp;теней, средних тонов и&nbsp;светов. Всё считается на&nbsp;видеокарте — мгновенно, даже на&nbsp;снимках в&nbsp;50&nbsp;мегапикселей.</p>
     <div class="ba reveal" id="ba" style="--d:.15s">
-      <img src="assets/after.jpg" width="2400" height="1600" alt="После обработки: тёплый яркий закат" loading="lazy">
-      <div class="ba-before"><img src="assets/before.jpg" width="2400" height="1600" alt="До обработки: блёклый холодный снимок" loading="lazy"></div>
+      <img src="assets/after.jpg?v=2" width="2400" height="1600" alt="После обработки: тёплый яркий закат" loading="lazy">
+      <div class="ba-before"><img src="assets/before.jpg?v=2" width="2400" height="1600" alt="До обработки: блёклый холодный снимок" loading="lazy"></div>
       <div class="ba-line"><span class="knob"><svg viewBox="0 0 24 24"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
       <span class="ba-lbl l">До</span><span class="ba-lbl r">После</span>
       <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Сравнить до и после">
     </div>
     <p class="hint reveal">Потяните, чтобы сравнить</p>
     <div class="duo">
-      <figure class="card reveal"><img src="assets/raw.jpg" width="606" height="688" alt="Ползунки панели «Свет и цвет»" loading="lazy">
+      <figure class="card reveal"><img src="assets/raw.jpg?v=2" width="606" height="688" alt="Ползунки панели «Свет и цвет»" loading="lazy">
         <figcaption><b>Восемь ползунков.</b> Двойной клик — сброс в&nbsp;ноль.</figcaption></figure>
-      <figure class="card reveal" style="--d:.1s"><img src="assets/wheels.jpg" width="606" height="482" alt="Цветовые круги: тени, средние, света" loading="lazy">
+      <figure class="card reveal" style="--d:.1s"><img src="assets/wheels.jpg?v=2" width="606" height="482" alt="Цветовые круги: тени, средние, света" loading="lazy">
         <figcaption><b>Цветовые круги.</b> Тёплые света и&nbsp;холодные тени — как в&nbsp;кино.</figcaption></figure>
     </div>
   </div>
@@ -118,7 +118,7 @@
       <div class="chips reveal" style="--d:.15s" id="ratioChips"><span>4 : 5</span><span>1 : 1</span><span>16 : 9</span><span>3 : 2</span><span>9 : 16</span></div>
     </div>
     <div class="demo crop-demo reveal" id="cropDemo" style="--d:.1s">
-      <img src="assets/after.jpg" width="2400" height="1600" alt="" loading="lazy">
+      <img src="assets/after.jpg?v=2" width="2400" height="1600" alt="" loading="lazy">
       <div class="frame" id="cropFrame"><i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i><span class="sz" id="cropLbl">4 : 5</span></div>
       <div class="snap-badge" id="snapBadge"><svg viewBox="0 0 24 24"><path d="m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15M5 8l4 4M12 15l4 4"/></svg>Прилипло к краям</div>
     </div>
@@ -139,7 +139,7 @@
       </ul>
     </div>
     <div class="demo sel-demo reveal" id="selDemo" style="--d:.1s">
-      <img src="assets/after.jpg" width="2400" height="1600" alt="" loading="lazy">
+      <img src="assets/after.jpg?v=2" width="2400" height="1600" alt="" loading="lazy">
       <svg viewBox="0 0 2400 1600" preserveAspectRatio="none" aria-hidden="true">
         <defs><mask id="selMask"><rect width="2400" height="1600" fill="#fff"/>
           <ellipse class="m-ell" cx="1536" cy="752" rx="190" ry="190" fill="#000"/>
@@ -161,7 +161,7 @@
     <h2 class="reveal" style="--d:.05s">Печатайте прямо на&nbsp;фото.</h2>
     <p class="body narrow reveal" style="--d:.1s">Кликните — и&nbsp;пишите. 14 шрифтов с&nbsp;кириллицей, жирный, курсив, выравнивание. Растягиваете рамку — растёт сам шрифт, поэтому буквы всегда остаются чёткими.</p>
     <div class="demo text-demo reveal" id="textDemo" style="--d:.15s">
-      <img src="assets/after.jpg" width="2400" height="1600" alt="" loading="lazy">
+      <img src="assets/after.jpg?v=2" width="2400" height="1600" alt="" loading="lazy">
       <div class="tx-box"><span class="tx" id="tx"></span><i class="caret"></i></div>
     </div>
     <div class="fonts reveal" id="fontChips"><span>Unbounded</span><span>Playfair Display</span><span>Caveat</span><span>Lobster</span></div>
@@ -179,9 +179,9 @@
     <div class="window tabs reveal" style="--d:.15s">
       <div class="bar"><i></i><i></i><i></i><span>Алтай.fotomag — Фотомагазин</span></div>
       <div class="tab-stage">
-        <img class="on" src="assets/crop.jpg" width="2592" height="2000" alt="Кадрирование с пропорцией 4:5" loading="lazy">
-        <img src="assets/select.jpg" width="2592" height="2000" alt="Выделение овалом вокруг солнца" loading="lazy">
-        <img src="assets/text.jpg" width="2592" height="2000" alt="Редактирование текста на фото" loading="lazy">
+        <img class="on" src="assets/crop.jpg?v=2" width="2592" height="2000" alt="Кадрирование с пропорцией 4:5" loading="lazy">
+        <img src="assets/select.jpg?v=2" width="2592" height="2000" alt="Выделение овалом вокруг солнца" loading="lazy">
+        <img src="assets/text.jpg?v=2" width="2592" height="2000" alt="Редактирование текста на фото" loading="lazy">
       </div>
     </div>
     <p class="tab-cap reveal" id="tabCap">Пропорция 4 : 5, сетка третей и размер будущего кадра — прямо поверх фото.</p>
