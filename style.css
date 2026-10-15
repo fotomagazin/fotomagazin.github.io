@@ -193,6 +193,36 @@ h2 { font-size: clamp(40px, 6.2vw, 80px); }
 @keyframes blink { 50% { opacity: 0; } }
 .fonts { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
 
+/* стили: фото плавно переключается между стилями */
+.st-demo { max-width: 1100px; margin: 64px auto 0; }
+.st-demo > img { position: absolute; inset: 0; opacity: 0; transition: opacity .9s var(--ease); }
+.st-demo > img.on { opacity: 1; }
+.st-demo > img:first-child { position: relative; }
+.st-name { position: absolute; top: 18px; left: 18px; padding: 7px 15px; border-radius: 980px; font-size: 14px; font-weight: 600;
+  background: rgba(0,0,0,.45); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.st-chips { justify-content: center; }
+.chips button { font: inherit; padding: 8px 16px; border-radius: 980px; border: 1px solid var(--line2); font-size: 15px; font-weight: 500; color: var(--dim);
+  background: none; cursor: pointer; transition: all .4s var(--ease); }
+.chips button:hover { color: #fff; }
+.chips button.on { color: #fff; background: rgba(41,151,255,.18); border-color: rgba(41,151,255,.6); }
+.duo .card img[src*="styles.jpg"] { max-width: 250px; }
+.st-list .checks { margin: 0; }
+.st-list .names { display: flex; flex-wrap: wrap; gap: 8px; }
+.st-list .names span { padding: 7px 13px; border-radius: 980px; background: rgba(255,255,255,.06); border: 1px solid var(--line); font-size: 14px; color: #d2d2d7; }
+.st-list .names .mine { border: 1.5px dashed rgba(41,151,255,.55); color: var(--blue); background: rgba(41,151,255,.06); font-weight: 600; }
+
+/* детали и эффекты */
+.fx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1100px; margin: 64px auto 0; text-align: left; }
+.fx-grid figure { margin: 0; }
+.fx-img { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 3 / 2; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+.fx-img img { width: 100%; height: 100%; object-fit: cover; }
+.fx-img span { position: absolute; top: 14px; padding: 5px 12px; border-radius: 980px; font-size: 13px; font-weight: 600; background: rgba(0,0,0,.5);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.fx-img .l { left: 14px; } .fx-img .r { right: 14px; }
+.fx-grid figcaption { color: var(--dim); font-size: 17px; margin-top: 16px; }
+.fx-grid figcaption b { color: var(--text); font-weight: 600; }
+.b-card kbd { font: inherit; font-size: 14px; padding: 1px 7px; border-radius: 6px; background: rgba(255,255,255,.08); border: 1px solid var(--line2); color: var(--text); }
+
 /* скриншоты во вкладках */
 .seg { display: inline-flex; padding: 4px; border-radius: 980px; background: #1c1c20; border: 1px solid var(--line); margin-top: 40px; }
 .seg button { font: inherit; font-size: 15px; font-weight: 600; color: var(--dim); background: none; border: 0; padding: 9px 20px; border-radius: 980px; cursor: pointer; transition: all .3s var(--ease); }
@@ -251,6 +281,9 @@ kbd { font: 600 14px/1 -apple-system, Inter, system-ui, sans-serif; min-width: 3
 .road li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--grad); box-shadow: 0 0 10px rgba(167,107,255,.6); }
 .road li.you { border: 1.5px dashed rgba(41,151,255,.55); color: var(--blue); font-weight: 600; background: rgba(41,151,255,.06); }
 .road li.you::before { display: none; }
+.road li.done { color: var(--text); border-color: rgba(48,209,88,.4); background: rgba(48,209,88,.07); }
+.road li.done::before { width: 16px; height: 16px; box-shadow: none; background: rgba(48,209,88,.2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2330d158' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px no-repeat; }
+.road li.done em { font-style: normal; font-size: 13px; color: #30d158; font-weight: 600; }
 .download .fine { margin-top: 14px; }
 
 /* окно отзыва */
@@ -323,7 +356,7 @@ details p { color: var(--dim); font-size: 18px; margin: 0; padding: 0 44px 26px 
   .grid2.rev .copy { order: 0; }
   .feature { padding: 110px 0; }
   .stats { grid-template-columns: 1fr 1fr; row-gap: 36px; }
-  .duo, .steps, .ways { grid-template-columns: 1fr; }
+  .duo, .steps, .ways, .fx-grid { grid-template-columns: 1fr; }
   .together { padding: 110px 0; }
   .bento { grid-template-columns: 1fr; }
   .b-card.wide { grid-column: auto; }

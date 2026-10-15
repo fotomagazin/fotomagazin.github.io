@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Фотомагазин — фоторедактор со слоями прямо в браузере</title>
-<meta name="description" content="Бесплатный фоторедактор со слоями, масками, коррекцией света и цвета, кадрированием, выделением и текстом. Один файл, работает в браузере — без установки и регистрации.">
+<meta name="description" content="Бесплатный фоторедактор со слоями, стилями в один клик, кривыми, коррекцией света и цвета, кадрированием, выделением и текстом. Один файл, работает в браузере — без установки и регистрации.">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Фотомагазин — фоторедактор со слоями">
-<meta property="og:description" content="Слои, маски, свет и цвет, кадрирование и текст. Один файл, работает в браузере. Бесплатно.">
-<meta property="og:image" content="assets/hero.jpg?v=3">
-<link rel="icon" href="assets/icon.svg?v=3" type="image/svg+xml">
+<meta property="og:description" content="Стили в один клик, слои, кривые, свет и цвет, кадрирование и текст. Один файл, работает в браузере. Бесплатно.">
+<meta property="og:image" content="assets/hero.jpg?v=4">
+<link rel="icon" href="assets/icon.svg?v=4" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Unbounded:wght@700&family=Playfair+Display:ital,wght@1,700&family=Caveat:wght@700&family=Lobster&display=swap">
@@ -23,7 +23,7 @@
   <div class="nav-in">
     <a class="brand" href="#top"><i class="logo"></i>Фотомагазин<span class="beta">Бета</span></a>
     <div class="links">
-      <a href="#layers">Слои</a><a href="#raw">Свет и цвет</a><a href="#crop">Инструменты</a><a href="#together">Участвовать</a><a href="#faq">Вопросы</a>
+      <a href="#styles">Стили</a><a href="#layers">Слои</a><a href="#raw">Свет и цвет</a><a href="#crop">Инструменты</a><a href="#together">Участвовать</a><a href="#faq">Вопросы</a>
     </div>
     <a class="btn btn-sm" href="https://github.com/fotomagazin/fotomagazin/releases/latest/download/fotomagazin.zip">Скачать</a>
   </div>
@@ -32,7 +32,7 @@
 <!-- ========== первый экран ========== -->
 <header class="hero" id="top">
   <div class="wrap hero-text">
-    <a class="pill reveal" href="#together"><span class="dot"></span>Бета-версия <span data-ver>0.1.3</span> — помогите сделать её лучше<span class="arr">›</span></a>
+    <a class="pill reveal" href="#styles"><span class="dot"></span>Новое в&nbsp;0.2: стили, кривые и&nbsp;эффекты<span class="arr">›</span></a>
     <h1 class="reveal" style="--d:.08s"><span class="grad">Фотомагазин.</span></h1>
     <p class="lead reveal" style="--d:.16s">Настоящий фоторедактор со&nbsp;слоями.<br><span>Один файл. Работает в&nbsp;браузере. Бесплатно.</span></p>
     <div class="cta reveal" style="--d:.24s">
@@ -46,21 +46,52 @@
     <div class="glow" aria-hidden="true"></div>
     <div class="window" id="heroWin">
       <div class="bar"><i></i><i></i><i></i><span>Алтай.fotomag — Фотомагазин</span></div>
-      <img src="assets/hero.jpg?v=3" width="3200" height="2000" alt="Окно Фотомагазина: пейзаж с горами на закате, текстовые слои и панель «Свет и цвет»">
+      <img src="assets/hero.jpg?v=4" width="3200" height="2000" alt="Окно Фотомагазина: пейзаж с горами на закате, текстовые слои и панель «Свет и цвет»">
     </div>
   </div>
 </header>
 
 <!-- ========== манифест ========== -->
 <section class="statement wrap">
-  <p id="statement">Слои. Маски. Свет и&nbsp;цвет. Кадрирование. Текст. Всё, что нужно для&nbsp;фотографии, — и&nbsp;ничего лишнего.</p>
+  <p id="statement">Стили. Слои. Кривые. Свет и&nbsp;цвет. Кадрирование. Текст. Всё, что нужно для&nbsp;фотографии, — и&nbsp;ничего лишнего.</p>
 </section>
 
 <section class="stats wrap">
-  <div class="stat reveal"><b data-count="60">0</b><span>шагов истории —<br>отменить можно всё</span></div>
-  <div class="stat reveal" style="--d:.08s"><b data-count="14">0</b><span>шрифтов<br>с кириллицей</span></div>
+  <div class="stat reveal"><b data-count="14">0</b><span>готовых стилей —<br>обработка в&nbsp;один клик</span></div>
+  <div class="stat reveal" style="--d:.08s"><b data-count="16">0</b><span>режимов наложения<br>слоёв</span></div>
   <div class="stat reveal" style="--d:.16s"><b data-count="30" data-suffix="+">0</b><span>форматов файлов —<br>от JPG до PSD и RAW</span></div>
   <div class="stat reveal" style="--d:.24s"><b data-count="0" data-suffix=" ₽">0 ₽</b><span>стоит программа.<br>Навсегда.</span></div>
+</section>
+
+<!-- ========== стили (новое в 0.2) ========== -->
+<section class="feature center" id="styles">
+  <div class="wrap">
+    <p class="eyebrow reveal">Новое в&nbsp;0.2 · Стили</p>
+    <h2 class="reveal" style="--d:.05s">Один клик —<br>и&nbsp;фото готово.</h2>
+    <p class="body narrow reveal" style="--d:.1s">Четырнадцать готовых обработок: от&nbsp;тёплого вечера до&nbsp;кино и&nbsp;плёнки. Миниатюры сразу показывают ваш снимок в&nbsp;каждом стиле, а&nbsp;силу можно убавить ползунком.</p>
+    <div class="demo st-demo reveal" id="stDemo" style="--d:.15s">
+      <img class="on" src="assets/st-none.jpg?v=4" width="1800" height="1200" alt="Исходное фото: блёклый пейзаж с горами" loading="lazy">
+      <img src="assets/st-warm.jpg?v=4" width="1800" height="1200" alt="Стиль «Тёплый»" loading="lazy">
+      <img src="assets/st-cinema.jpg?v=4" width="1800" height="1200" alt="Стиль «Кино»" loading="lazy">
+      <img src="assets/st-film.jpg?v=4" width="1800" height="1200" alt="Стиль «Плёнка»" loading="lazy">
+      <img src="assets/st-sunset.jpg?v=4" width="1800" height="1200" alt="Стиль «Закат»" loading="lazy">
+      <img src="assets/st-bw.jpg?v=4" width="1800" height="1200" alt="Стиль «Ч/Б контраст»" loading="lazy">
+      <span class="st-name" id="stName">Без стиля</span>
+    </div>
+    <div class="chips st-chips reveal" id="stChips"><button>Без стиля</button><button>Тёплый</button><button>Кино</button><button>Плёнка</button><button>Закат</button><button>Ч/Б контраст</button></div>
+    <div class="duo">
+      <figure class="card reveal"><img src="assets/styles.jpg?v=4" width="606" height="1238" alt="Панель «Стили»: плитки с миниатюрами фото в каждом стиле и ползунок силы" loading="lazy">
+        <figcaption><b>Ваше фото в&nbsp;каждом стиле.</b> Выделите несколько слоёв — стиль ляжет на&nbsp;все сразу.</figcaption></figure>
+      <figure class="card reveal st-list" style="--d:.1s">
+        <div class="names"><span>Чёткий</span><span>Тёплый</span><span>Холодный</span><span>Яркий</span><span>Портрет</span><span>Кино</span><span>Плёнка</span><span>Винтаж</span><span>Закат</span><span>Пастель</span><span>Драма</span><span>Ч/Б контраст</span><span>Ч/Б мягкий</span><span>Нуар</span><span class="mine">+ Свой стиль</span></div>
+        <ul class="checks">
+          <li>Стиль ложится поверх ваших настроек — ничего не&nbsp;теряется</li>
+          <li>Сила стиля — от&nbsp;едва заметной до&nbsp;полной</li>
+          <li>Убрать стиль — один клик по&nbsp;«Без стиля»</li>
+        </ul>
+        <figcaption><b>Свой стиль.</b> Настроили снимок так, как нравится, — сохраните обработку и&nbsp;применяйте к&nbsp;другим фото в&nbsp;один клик.</figcaption></figure>
+    </div>
+  </div>
 </section>
 
 <!-- ========== слои ========== -->
@@ -69,8 +100,9 @@
     <div class="copy">
       <p class="eyebrow reveal">Слои и маски</p>
       <h2 class="reveal" style="--d:.05s">Слои.<br>Как у&nbsp;профи.</h2>
-      <p class="body reveal" style="--d:.1s">Складывайте фото, текст и&nbsp;фигуры в&nbsp;стопку. Маски прячут лишнее без&nbsp;потерь — проявите обратно в&nbsp;любой момент. А&nbsp;каждый шаг можно отменить.</p>
+      <p class="body reveal" style="--d:.1s">Складывайте фото, текст и&nbsp;фигуры в&nbsp;стопку. Маски прячут лишнее без&nbsp;потерь, а&nbsp;режимы наложения смешивают слои, как в&nbsp;профессиональных редакторах. Каждый шаг можно отменить.</p>
       <ul class="checks reveal" style="--d:.15s">
+        <li>16 режимов наложения: Умножение, Экран, Перекрытие, Мягкий свет…</li>
         <li>Маски — белые, скрывающие, по&nbsp;выделению</li>
         <li>Копирование, объединение, порядок слоёв</li>
         <li>Прозрачность, поворот, отражение</li>
@@ -78,7 +110,7 @@
       </ul>
     </div>
     <div class="shot-stack reveal" style="--d:.1s">
-      <div class="card zoom"><img src="assets/layers.jpg?v=3" width="606" height="370" alt="Панель слоёв: текстовые слои и фото" loading="lazy"></div>
+      <div class="card zoom"><img src="assets/layers.jpg?v=4" width="606" height="370" alt="Панель слоёв: текстовые слои и фото" loading="lazy"></div>
       <div class="tag t1"><svg viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>Текст — всегда отдельный слой</div>
       <div class="tag t2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor"/></svg>Маски без потерь</div>
     </div>
@@ -92,18 +124,58 @@
     <h2 class="reveal" style="--d:.05s">Свет и&nbsp;цвет —<br>под&nbsp;полным контролем.</h2>
     <p class="body narrow reveal" style="--d:.1s">Температура, экспозиция, контраст, тени, светлые, красочность — восемь ползунков, чтобы довести снимок до&nbsp;ума. Плюс цветовые круги для&nbsp;теней, средних тонов и&nbsp;светов. Всё считается на&nbsp;видеокарте — мгновенно, даже на&nbsp;снимках в&nbsp;50&nbsp;мегапикселей.</p>
     <div class="ba reveal" id="ba" style="--d:.15s">
-      <img src="assets/after.jpg?v=3" width="2400" height="1600" alt="После обработки: тёплый яркий закат" loading="lazy">
-      <div class="ba-before"><img src="assets/before.jpg?v=3" width="2400" height="1600" alt="До обработки: блёклый холодный снимок" loading="lazy"></div>
+      <img src="assets/after.jpg?v=4" width="2400" height="1600" alt="После обработки: тёплый яркий закат" loading="lazy">
+      <div class="ba-before"><img src="assets/before.jpg?v=4" width="2400" height="1600" alt="До обработки: блёклый холодный снимок" loading="lazy"></div>
       <div class="ba-line"><span class="knob"><svg viewBox="0 0 24 24"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
       <span class="ba-lbl l">До</span><span class="ba-lbl r">После</span>
       <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Сравнить до и после">
     </div>
     <p class="hint reveal">Потяните, чтобы сравнить</p>
     <div class="duo">
-      <figure class="card reveal"><img src="assets/raw.jpg?v=3" width="606" height="688" alt="Ползунки панели «Свет и цвет»" loading="lazy">
+      <figure class="card reveal"><img src="assets/raw.jpg?v=4" width="606" height="688" alt="Ползунки панели «Свет и цвет»" loading="lazy">
         <figcaption><b>Восемь ползунков.</b> Двойной клик — сброс в&nbsp;ноль.</figcaption></figure>
-      <figure class="card reveal" style="--d:.1s"><img src="assets/wheels.jpg?v=3" width="606" height="482" alt="Цветовые круги: тени, средние, света" loading="lazy">
+      <figure class="card reveal" style="--d:.1s"><img src="assets/wheels.jpg?v=4" width="606" height="482" alt="Цветовые круги: тени, средние, света" loading="lazy">
         <figcaption><b>Цветовые круги.</b> Тёплые света и&nbsp;холодные тени — как в&nbsp;кино.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== кривые (новое в 0.2) ========== -->
+<section class="feature" id="curves">
+  <div class="wrap grid2 rev">
+    <div class="copy">
+      <p class="eyebrow reveal">Новое в&nbsp;0.2 · Кривые</p>
+      <h2 class="reveal" style="--d:.05s">Кривые.<br>Тон — до&nbsp;точки.</h2>
+      <p class="body reveal" style="--d:.1s">Главный инструмент профессиональной обработки. Тяните точку вверх — светлее, вниз — темнее. Под&nbsp;кривой — гистограмма вашего снимка, чтобы видеть, где тени, а&nbsp;где света.</p>
+      <ul class="checks reveal" style="--d:.15s">
+        <li>Общая яркость и&nbsp;отдельно каналы R, G, B</li>
+        <li>Готовые: контраст, мягче, светлее, темнее, матовый</li>
+        <li>Двойной клик — убрать точку</li>
+      </ul>
+    </div>
+    <div class="shot-stack reveal" style="--d:.1s">
+      <div class="card zoom"><img src="assets/curves.jpg?v=4" width="606" height="868" alt="Панель «Кривые»: S-образная кривая поверх гистограммы, каналы RGB, R, G, B" loading="lazy"></div>
+      <div class="tag t1"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16c3 0 4-8 7-8s3 4 6 4"/></svg>Гистограмма под кривой</div>
+      <div class="tag t2"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="4"/><circle cx="16" cy="9" r="4"/><circle cx="12" cy="16" r="4"/></svg>Каналы R · G · B</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== детали и эффекты (новое в 0.2) ========== -->
+<section class="feature center" id="fx">
+  <div class="wrap">
+    <p class="eyebrow reveal">Новое в&nbsp;0.2 · Детали и&nbsp;эффекты</p>
+    <h2 class="reveal" style="--d:.05s">Резкость, размытие,<br>виньетка и&nbsp;зерно.</h2>
+    <p class="body narrow reveal" style="--d:.1s">Последний штрих, который превращает снимок в&nbsp;кадр. Хотите размыть только фон — сделайте копию слоя, размойте её и&nbsp;проявите маской.</p>
+    <div class="fx-grid">
+      <figure class="reveal"><div class="fx-img split"><img src="assets/fx-sp.jpg?v=4" width="900" height="600" alt="Резкость: слева без неё, справа с ней" loading="lazy"><span class="l">Без</span><span class="r">С&nbsp;резкостью</span></div>
+        <figcaption><b>Резкость.</b> Детали чётче — без цветных ореолов.</figcaption></figure>
+      <figure class="reveal" style="--d:.08s"><div class="fx-img"><img src="assets/fx-bl.jpg?v=4" width="900" height="600" alt="Размытие всего снимка" loading="lazy"></div>
+        <figcaption><b>Размытие.</b> Мягкий фон или&nbsp;эффект «не&nbsp;в&nbsp;фокусе».</figcaption></figure>
+      <figure class="reveal"><div class="fx-img"><img src="assets/fx-vg.jpg?v=4" width="900" height="600" alt="Виньетка: края снимка затемнены" loading="lazy"></div>
+        <figcaption><b>Виньетка.</b> Края темнее или&nbsp;светлее — взгляд идёт в&nbsp;центр.</figcaption></figure>
+      <figure class="reveal" style="--d:.08s"><div class="fx-img"><img src="assets/fx-gr.jpg?v=4" width="900" height="600" alt="Зерно плёнки крупным планом" loading="lazy"></div>
+        <figcaption><b>Зерно.</b> Фактура плёнки — живая, а&nbsp;не&nbsp;цифровой шум.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -118,7 +190,7 @@
       <div class="chips reveal" style="--d:.15s" id="ratioChips"><span>4 : 5</span><span>1 : 1</span><span>16 : 9</span><span>3 : 2</span><span>9 : 16</span></div>
     </div>
     <div class="demo crop-demo reveal" id="cropDemo" style="--d:.1s">
-      <img src="assets/after.jpg?v=3" width="2400" height="1600" alt="" loading="lazy">
+      <img src="assets/after.jpg?v=4" width="2400" height="1600" alt="" loading="lazy">
       <div class="frame" id="cropFrame"><i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i><span class="sz" id="cropLbl">4 : 5</span></div>
       <div class="snap-badge" id="snapBadge"><svg viewBox="0 0 24 24"><path d="m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15M5 8l4 4M12 15l4 4"/></svg>Прилипло к краям</div>
     </div>
@@ -139,7 +211,7 @@
       </ul>
     </div>
     <div class="demo sel-demo reveal" id="selDemo" style="--d:.1s">
-      <img src="assets/after.jpg?v=3" width="2400" height="1600" alt="" loading="lazy">
+      <img src="assets/after.jpg?v=4" width="2400" height="1600" alt="" loading="lazy">
       <svg viewBox="0 0 2400 1600" preserveAspectRatio="none" aria-hidden="true">
         <defs><mask id="selMask"><rect width="2400" height="1600" fill="#fff"/>
           <ellipse class="m-ell" cx="1536" cy="752" rx="190" ry="190" fill="#000"/>
@@ -161,10 +233,26 @@
     <h2 class="reveal" style="--d:.05s">Печатайте прямо на&nbsp;фото.</h2>
     <p class="body narrow reveal" style="--d:.1s">Кликните — и&nbsp;пишите. 14 шрифтов с&nbsp;кириллицей, жирный, курсив, выравнивание. Растягиваете рамку — растёт сам шрифт, поэтому буквы всегда остаются чёткими.</p>
     <div class="demo text-demo reveal" id="textDemo" style="--d:.15s">
-      <img src="assets/after.jpg?v=3" width="2400" height="1600" alt="" loading="lazy">
+      <img src="assets/after.jpg?v=4" width="2400" height="1600" alt="" loading="lazy">
       <div class="tx-box"><span class="tx" id="tx"></span><i class="caret"></i></div>
     </div>
     <div class="fonts reveal" id="fontChips"><span>Unbounded</span><span>Playfair Display</span><span>Caveat</span><span>Lobster</span></div>
+  </div>
+</section>
+
+<!-- ========== экспорт (новое в 0.2) ========== -->
+<section class="feature" id="export">
+  <div class="wrap grid2">
+    <div class="copy">
+      <p class="eyebrow reveal">Новое в&nbsp;0.2 · Экспорт</p>
+      <h2 class="reveal" style="--d:.05s">Сохраните<br>как&nbsp;нужно.</h2>
+      <p class="body reveal" style="--d:.1s">JPG для&nbsp;фото, PNG с&nbsp;прозрачностью или&nbsp;лёгкий WebP для&nbsp;сайта. Готовые размеры для&nbsp;Instagram и&nbsp;Telegram — а&nbsp;вес файла видно ещё до&nbsp;сохранения.</p>
+      <div class="chips reveal" style="--d:.15s"><span class="on">WebP</span><span>JPG</span><span>PNG</span><span>Instagram</span><span>Telegram</span><span>Full HD</span></div>
+    </div>
+    <div class="shot-stack reveal" style="--d:.1s">
+      <div class="card zoom"><img src="assets/export.jpg?v=4" width="960" height="740" alt="Окно «Сохранить картинку»: формат WebP, качество, размер для Instagram и вес файла" loading="lazy"></div>
+      <div class="tag t1"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Вес файла — заранее</div>
+    </div>
   </div>
 </section>
 
@@ -174,17 +262,18 @@
     <p class="eyebrow reveal">Это настоящая программа</p>
     <h2 class="reveal" style="--d:.05s">Посмотрите в&nbsp;деле.</h2>
     <div class="seg reveal" style="--d:.1s" role="tablist">
-      <button class="on" data-tab="0" role="tab">Кадрирование</button><button data-tab="1" role="tab">Выделение</button><button data-tab="2" role="tab">Текст</button>
+      <button class="on" data-tab="0" role="tab">Стили</button><button data-tab="1" role="tab">Кадрирование</button><button data-tab="2" role="tab">Выделение</button><button data-tab="3" role="tab">Текст</button>
     </div>
     <div class="window tabs reveal" style="--d:.15s">
       <div class="bar"><i></i><i></i><i></i><span>Алтай.fotomag — Фотомагазин</span></div>
       <div class="tab-stage">
-        <img class="on" src="assets/crop.jpg?v=3" width="2592" height="2000" alt="Кадрирование с пропорцией 4:5" loading="lazy">
-        <img src="assets/select.jpg?v=3" width="2592" height="2000" alt="Выделение овалом вокруг солнца" loading="lazy">
-        <img src="assets/text.jpg?v=3" width="2592" height="2000" alt="Редактирование текста на фото" loading="lazy">
+        <img class="on" src="assets/styles-win.jpg?v=4" width="2592" height="2000" alt="Стиль «Кино», справа — плитки стилей с миниатюрами" loading="lazy">
+        <img src="assets/crop.jpg?v=4" width="2592" height="2000" alt="Кадрирование с пропорцией 4:5" loading="lazy">
+        <img src="assets/select.jpg?v=4" width="2592" height="2000" alt="Выделение овалом вокруг солнца" loading="lazy">
+        <img src="assets/text.jpg?v=4" width="2592" height="2000" alt="Редактирование текста на фото" loading="lazy">
       </div>
     </div>
-    <p class="tab-cap reveal" id="tabCap">Пропорция 4 : 5, сетка третей и размер будущего кадра — прямо поверх фото.</p>
+    <p class="tab-cap reveal" id="tabCap">Стиль «Кино» в один клик. Справа — ваше фото в каждом из стилей.</p>
   </div>
 </section>
 
@@ -204,10 +293,10 @@
         <h3>Штамп.</h3><p>Клонируйте чистый участок — и&nbsp;прыщ, провод или&nbsp;мусор исчезают.</p></div>
       <div class="b-card reveal" style="--d:.06s"><svg viewBox="0 0 24 24"><path d="m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15M5 8l4 4M12 15l4 4"/></svg>
         <h3>Привязка.</h3><p>Слои и&nbsp;рамки сами липнут к&nbsp;краям и&nbsp;центру кадра.</p></div>
-      <div class="b-card reveal" style="--d:.12s"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-        <h3>Экспорт в&nbsp;клик.</h3><p>PNG или&nbsp;JPG — сразу. Проект — со&nbsp;всеми слоями, чтобы продолжить позже.</p></div>
+      <div class="b-card reveal" style="--d:.12s"><svg viewBox="0 0 24 24"><path d="M8 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3M16 5h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3M12 3v18"/></svg>
+        <h3>До / после.</h3><p>Зажмите <kbd>\</kbd> — и&nbsp;увидите снимок без&nbsp;обработки. Отпустите — вернётся результат.</p></div>
       <div class="b-card wide reveal"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></svg>
-        <h3>Привычные горячие клавиши.</h3><p>Если вы работали в&nbsp;профессиональных редакторах — руки всё вспомнят сами.</p>
+        <h3>Привычные горячие клавиши.</h3><p>Если вы работали в&nbsp;профессиональных редакторах — руки всё вспомнят сами. А&nbsp;на&nbsp;тачпаде два пальца двигают фото, щипок — масштаб.</p>
         <div class="keys"><kbd>V</kbd><kbd>M</kbd><kbd>C</kbd><kbd>B</kbd><kbd>E</kbd><kbd>T</kbd><kbd>[ ]</kbd><kbd>⌘Z</kbd><kbd>⌘J</kbd><kbd>⌘D</kbd><kbd>Пробел</kbd></div></div>
     </div>
   </div>
@@ -217,7 +306,7 @@
 <section class="together" id="together">
   <div class="wrap">
     <div class="center">
-      <p class="eyebrow reveal">Бета-версия <span data-ver>0.1.3</span></p>
+      <p class="eyebrow reveal">Бета-версия <span data-ver>0.2</span></p>
       <h2 class="reveal" style="--d:.05s">Фотомагазин создаётся<br>вместе с&nbsp;вами.</h2>
       <p class="body narrow reveal" style="--d:.1s">Это ранняя версия: основа уже работает, но&nbsp;многого ещё нет, а&nbsp;что-то может сломаться. Расскажите, чего вам не&nbsp;хватает, — автор читает каждое сообщение, а&nbsp;в&nbsp;канале вы&nbsp;голосуете за&nbsp;то, что появится дальше.</p>
     </div>
@@ -231,7 +320,7 @@
       <h3 class="reveal">Что дальше? Решаете вы.</h3>
       <p class="reveal" style="--d:.05s">Идеи, которые уже на&nbsp;очереди. Голосуйте в&nbsp;опросах нашего канала — самые нужные появятся первыми.</p>
       <ul class="road reveal" style="--d:.1s">
-        <li>Режимы наложения слоёв</li><li>Кривые и уровни</li><li>Удаление фона одной кнопкой</li><li>Восстанавливающая кисть</li>
+        <li class="done">Режимы наложения слоёв <em>готово в&nbsp;0.2</em></li><li class="done">Кривые <em>готово в&nbsp;0.2</em></li><li>Уровни</li><li>Удаление фона одной кнопкой</li><li>Восстанавливающая кисть</li>
         <li>Нажим графического планшета</li><li>Градиенты и заливка</li><li>Фигуры и линии</li><li>Приложение для Mac и Windows</li>
         <li>Английская версия</li><li class="you">+ ваша идея</li>
       </ul>
@@ -254,7 +343,7 @@
     <i class="logo big reveal"></i>
     <h2 class="reveal" style="--d:.05s">Начните прямо сейчас.</h2>
     <p class="body narrow reveal" style="--d:.1s">Бесплатно. Без регистрации. Архив меньше 100&nbsp;КБ — программа и&nbsp;короткая инструкция.</p>
-    <p class="fine reveal" style="--d:.12s">Бета-версия <span data-ver>0.1.3</span>. Нашли ошибку или&nbsp;чего-то не&nbsp;хватает? <a class="inl" data-form="idea" href="#together">Напишите нам</a>.</p>
+    <p class="fine reveal" style="--d:.12s">Бета-версия <span data-ver>0.2</span>. Нашли ошибку или&nbsp;чего-то не&nbsp;хватает? <a class="inl" data-form="idea" href="#together">Напишите нам</a>.</p>
     <div class="cta reveal" style="--d:.15s">
       <a class="btn btn-lg" href="https://github.com/fotomagazin/fotomagazin/releases/latest/download/fotomagazin.zip">
         <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Скачать Фотомагазин</a>
@@ -273,12 +362,13 @@
   <div class="wrap narrow-w">
     <h2 class="reveal center-t">Вопросы и&nbsp;ответы.</h2>
     <details class="reveal"><summary>Почему «бета»?</summary><p>Фотомагазин только начинает свой путь. Всё, что описано на&nbsp;этой странице, уже работает, но&nbsp;программа ещё развивается: будут появляться новые инструменты, а&nbsp;иногда — встречаться ошибки. Ваши отзывы помогают решить, что делать в&nbsp;первую очередь.</p></details>
+    <details class="reveal"><summary>Что нового в&nbsp;версии 0.2?</summary><p>Стили — 14 готовых обработок в&nbsp;один клик и&nbsp;свои стили. Кривые с&nbsp;гистограммой. Резкость, размытие, виньетка и&nbsp;зерно. 16 режимов наложения слоёв. Окно «Экспорт» с&nbsp;форматами JPG, PNG и&nbsp;WebP, размерами для&nbsp;Instagram и&nbsp;Telegram и&nbsp;весом файла. «До / после» по&nbsp;клавише \ и&nbsp;управление тачпадом. Уже установленный Фотомагазин сам подскажет, что вышла новая версия.</p></details>
     <details class="reveal"><summary>Как предложить идею или&nbsp;сообщить об&nbsp;ошибке?</summary><p>Через <a class="inl" data-form="idea" href="#together">короткую форму</a> или нашего <a class="inl" data-tg="bot" href="#together">Telegram-бота</a> — сообщение придёт напрямую автору. Или прямо из&nbsp;программы: кнопка «Обратная связь» в&nbsp;верхней панели. А&nbsp;новости об&nbsp;обновлениях и&nbsp;опросы — в&nbsp;нашем <a class="inl" data-tg="channel" href="#together">Telegram-канале</a>.</p></details>
     <details class="reveal"><summary>Это правда бесплатно?</summary><p>Да. Без пробного периода, подписок и&nbsp;рекламы.</p></details>
     <details class="reveal"><summary>Нужно что-то устанавливать?</summary><p>Нет. Скачайте архив, распакуйте его двойным кликом и&nbsp;откройте fotomagazin.html — программа запустится в&nbsp;браузере, как обычная. Вся программа — это один этот файл, а&nbsp;рядом лежит короткая инструкция.</p></details>
     <details class="reveal"><summary>Работает без интернета?</summary><p>Да, всё основное работает офлайн. Интернет нужен только чтобы подгрузить шрифты для&nbsp;текста и&nbsp;при&nbsp;первом открытии PSD, TIFF или&nbsp;HEIC.</p></details>
     <details class="reveal"><summary>В каком браузере лучше?</summary><p>Лучше всего — в&nbsp;Google Chrome или&nbsp;Microsoft Edge на&nbsp;Mac и&nbsp;Windows.</p></details>
-    <details class="reveal"><summary>Можно сохранить работу и&nbsp;продолжить потом?</summary><p>Да. «Сохранить» записывает проект в&nbsp;файл .fotomag со&nbsp;всеми слоями, масками и&nbsp;коррекциями. А&nbsp;автосохранение подстрахует, если вкладка закроется.</p></details>
+    <details class="reveal"><summary>Можно сохранить работу и&nbsp;продолжить потом?</summary><p>Да. «Сохранить» записывает проект в&nbsp;файл .fotomag со&nbsp;всеми слоями, масками, стилями и&nbsp;коррекциями. А&nbsp;автосохранение подстрахует, если вкладка закроется.</p></details>
   </div>
 </section>
 

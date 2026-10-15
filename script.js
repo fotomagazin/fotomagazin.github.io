@@ -114,16 +114,25 @@ if (!reduce) whileVisible($('#textDemo'), async alive => {
   }
 });
 
+// ---------- стили: фото само переключается между стилями (клик по названию — показать) ----------
+const stImgs = $$('#stDemo > img'), stBtns = $$('#stChips button'), stName = $('#stName');
+let stAuto = true;
+function showStyle(i) { stImgs.forEach((im, k) => im.classList.toggle('on', k === i)); stBtns.forEach((b, k) => b.classList.toggle('on', k === i)); stName.textContent = stBtns[i].textContent; }
+showStyle(0);
+stBtns.forEach((b, i) => b.addEventListener('click', () => { stAuto = false; showStyle(i); }));
+if (!reduce) whileVisible($('#stDemo'), async alive => { for (let i = 1; alive() && stAuto; i++) { await wait(2200); if (alive() && stAuto) showStyle(i % stImgs.length); } });
+
 // ---------- скриншоты во вкладках ----------
-const tabBtns = $$('.seg button'), tabImgs = $$('.tab-stage img'), tabCap = $('#tabCap');
-const CAPS = ['Пропорция 4 : 5, сетка третей и размер будущего кадра — прямо поверх фото.',
+const tabBtns = $$('#tools .seg button'), tabImgs = $$('.tab-stage img'), tabCap = $('#tabCap');
+const CAPS = ['Стиль «Кино» в один клик. Справа — ваше фото в каждом из стилей.',
+  'Пропорция 4 : 5, сетка третей и размер будущего кадра — прямо поверх фото.',
   'Овальное выделение вокруг солнца. Внизу — что можно сделать с выделенным.',
   'Текст редактируется прямо на снимке, а шрифт и размер меняются на лету.'];
 let tabAuto = true;
 function showTab(i) { tabBtns.forEach((b, k) => { b.classList.toggle('on', k === i); b.setAttribute('aria-selected', k === i); });
   tabImgs.forEach((im, k) => im.classList.toggle('on', k === i)); tabCap.textContent = CAPS[i]; }
 tabBtns.forEach((b, i) => b.addEventListener('click', () => { tabAuto = false; showTab(i); }));
-if (!reduce) whileVisible($('.tab-stage'), async alive => { let i = 0; while (alive() && tabAuto) { await wait(4200); if (alive() && tabAuto) showTab(i = (i + 1) % 3); } });
+if (!reduce) whileVisible($('.tab-stage'), async alive => { let i = 0; while (alive() && tabAuto) { await wait(4200); if (alive() && tabAuto) showTab(i = (i + 1) % tabImgs.length); } });
 
 // ---------- карточки: мягкая подсветка под курсором ----------
 $$('.b-card').forEach(c => c.addEventListener('pointermove', e => {
