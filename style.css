@@ -212,6 +212,8 @@ h2 { font-size: clamp(40px, 6.2vw, 80px); }
 .st-list .names .mine { border: 1.5px dashed rgba(41,151,255,.55); color: var(--blue); background: rgba(41,151,255,.06); font-weight: 600; }
 
 /* детали и эффекты */
+#baHeal { margin-top: 64px; }
+#tx.fx { color: #fff; -webkit-text-stroke: .9cqw #ff2f6d; paint-order: stroke fill; text-shadow: 0 .6cqw 1.4cqw rgba(20,10,40,.65); }
 .fx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1100px; margin: 64px auto 0; text-align: left; }
 .fx-grid figure { margin: 0; }
 .fx-img { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 3 / 2; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.55); }

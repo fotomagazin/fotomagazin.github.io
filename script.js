@@ -43,8 +43,9 @@ $$('.stat').forEach(s => s.addEventListener('reveal', () => {
     b.textContent = Math.round(to * e) + suf; if (k < 1) requestAnimationFrame(step); })(t0);
 }));
 
-// ---------- до / после ----------
-const ba = $('#ba'), baRange = $('.ba-range', ba);
+// ---------- до / после (свет и цвет, восстанавливающая кисть) ----------
+$$('.ba').forEach(ba => {
+const baRange = $('.ba-range', ba);
 let baTouched = false;
 const setBA = v => ba.style.setProperty('--x', v + '%');
 baRange.addEventListener('input', () => { baTouched = true; setBA(baRange.value); });
@@ -58,6 +59,7 @@ ba.addEventListener('reveal', () => {   // при первом показе шт
       const v = va + (vb - va) * e; setBA(v); baRange.value = v; }
     requestAnimationFrame(step);
   })(performance.now());
+});
 });
 
 // ---------- общий помощник: повторять, пока блок на экране ----------
@@ -101,8 +103,8 @@ if (!reduce) whileVisible(selDemo, async alive => { for (let i = 1; alive(); i++
 
 // ---------- текст: печатается разными шрифтами ----------
 const tx = $('#tx'), fontChips = $$('#fontChips span');
-const WORDS = [['Алтай', '"Unbounded"', 700, 'normal'], ['Байкал', '"Playfair Display"', 700, 'italic'], ['Карелия', '"Caveat"', 700, 'normal'], ['Камчатка', '"Lobster"', 400, 'normal']];
-function setFont(i) { const [, f, w, s] = WORDS[i]; Object.assign(tx.style, { fontFamily: f + ', sans-serif', fontWeight: w, fontStyle: s }); fontChips.forEach((c, k) => c.classList.toggle('on', k === i)); }
+const WORDS = [['Алтай', '"Unbounded"', 700, 'normal'], ['Байкал', '"Playfair Display"', 700, 'italic'], ['Карелия', '"Caveat"', 700, 'normal'], ['Камчатка', '"Lobster"', 400, 'normal'], ['Эльбрус', '"Unbounded"', 700, 'normal', true]];
+function setFont(i) { const [, f, w, s, fx] = WORDS[i]; Object.assign(tx.style, { fontFamily: f + ', sans-serif', fontWeight: w, fontStyle: s }); tx.classList.toggle('fx', !!fx); fontChips.forEach((c, k) => c.classList.toggle('on', k === i)); }
 setFont(0); tx.textContent = WORDS[0][0];
 if (!reduce) whileVisible($('#textDemo'), async alive => {
   for (let i = 0; alive(); i = (i + 1) % WORDS.length) {
@@ -126,6 +128,7 @@ if (!reduce) whileVisible($('#stDemo'), async alive => { for (let i = 1; alive()
 const tabBtns = $$('#tools .seg button'), tabImgs = $$('.tab-stage img'), tabCap = $('#tabCap');
 const CAPS = ['Стиль «Кино» в один клик. Справа — ваше фото в каждом из стилей.',
   'Пропорция 4 : 5, сетка третей и размер будущего кадра — прямо поверх фото.',
+  'Наклон −4°: фото поворачивается, а рамка сама обходит пустые углы. Частая сетка помогает поймать горизонт.',
   'Овальное выделение вокруг солнца. Внизу — что можно сделать с выделенным.',
   'Текст редактируется прямо на снимке, а шрифт и размер меняются на лету.'];
 let tabAuto = true;
