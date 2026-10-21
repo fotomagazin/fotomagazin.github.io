@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контур — векторный редактор для печати, резки и QR-кодов прямо в браузере</title>
+<meta name="description" content="Бесплатный векторный редактор: перо и кривые Безье, фигуры, текст с переводом в кривые, сложить и вычесть, выравнивание, привязка, векторные QR-коды. Экспорт SVG, PDF, EPS, DXF и PNG. Один файл, работает в браузере — без установки и регистрации.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Контур — векторный редактор для печати и резки">
+<meta property="og:description" content="Перо, фигуры, текст в кривые, векторные QR-коды. Экспорт SVG, PDF, EPS, DXF, PNG. Один файл, работает в браузере. Бесплатно.">
+<meta property="og:image" content="../assets/kontur/hero.jpg?v=1">
+<link rel="icon" href="../assets/kontur/icon.svg?v=1" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Unbounded:wght@700&family=Lobster&family=Caveat:wght@700&family=Russo+One&family=Great+Vibes&family=Playfair+Display:ital,wght@1,700&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="kontur.css">
+</head>
+<body class="kt" data-repo="fotomagazin/kontur" data-cache="kt-rel" data-app="Контур">
+
+<!-- ========== навигация ========== -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top"><img class="klogo" src="../assets/kontur/icon.svg?v=1" alt=""><span class="bn">Контур</span><span class="beta">Бета</span></a>
+    <div class="links">
+      <a href="#text">Текст</a><a href="#pen">Перо</a><a href="#bool">Фигуры</a><a href="#qr">QR-коды</a><a href="#export">Экспорт</a><a href="#together">Участвовать</a><a href="#faq">Вопросы</a>
+    </div>
+    <div class="nav-r">
+      <div class="fam" aria-label="Программы"><a href="../">Фотомагазин</a><a class="on" href="./" aria-current="page">Контур</a></div>
+      <a class="btn btn-sm" href="https://github.com/fotomagazin/kontur/releases/latest/download/kontur.zip">Скачать</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== первый экран ========== -->
+<header class="hero" id="top">
+  <div class="wrap hero-text">
+    <img class="klogo hero-logo reveal" src="../assets/kontur/icon.svg?v=1" width="72" height="72" alt="Логотип Контура">
+    <a class="pill reveal" href="../" style="--d:.04s"><span class="dot"></span>От&nbsp;создателей Фотомагазина<span class="arr">›</span></a>
+    <h1 class="reveal" style="--d:.08s"><span class="grad">Контур.</span></h1>
+    <p class="lead reveal" style="--d:.16s">Векторный редактор для&nbsp;печати, резки, вывесок и&nbsp;QR-кодов.<br><span>Один файл. Работает в&nbsp;браузере. Бесплатно.</span></p>
+    <div class="cta reveal" style="--d:.24s">
+      <a class="btn btn-lg" href="https://github.com/fotomagazin/kontur/releases/latest/download/kontur.zip">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Скачать бесплатно</a>
+    </div>
+    <p class="dl-count" hidden><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg><b>0</b>&nbsp;<span>скачиваний</span></p>
+    <p class="fine reveal" style="--d:.3s">Бета-версия <span data-ver>0.1</span> · Mac и Windows · Без установки · Без регистрации</p>
+  </div>
+  <div class="hero-stage">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="window" id="heroWin">
+      <div class="bar"><i></i><i></i><i></i><span>Кофейня.kontur — Контур</span></div>
+      <img src="../assets/kontur/hero.jpg?v=1" width="2880" height="1800" alt="Окно Контура: вывеска кофейни — чашка, пар, надпись «КОФЕЙНЯ», QR-код и направляющие">
+    </div>
+  </div>
+</header>
+
+<!-- ========== манифест ========== -->
+<section class="statement wrap">
+  <p id="statement">Перо. Фигуры. Текст в&nbsp;кривые. QR-коды. Точные миллиметры. Всё, что нужно для&nbsp;печати и&nbsp;резки, — и&nbsp;ничего лишнего.</p>
+</section>
+
+<section class="stats wrap">
+  <div class="stat reveal"><b data-count="16">0</b><span>шрифтов с&nbsp;кириллицей —<br>и&nbsp;можно загрузить свой</span></div>
+  <div class="stat reveal" style="--d:.08s"><b data-count="5">0</b><span>форматов экспорта:<br>SVG, PDF, EPS, DXF, PNG</span></div>
+  <div class="stat reveal" style="--d:.16s"><b data-count="11">0</b><span>видов QR-кодов —<br>от&nbsp;сайта до&nbsp;Wi-Fi</span></div>
+  <div class="stat reveal" style="--d:.24s"><b data-count="0" data-suffix=" ₽">0 ₽</b><span>стоит программа.<br>Навсегда.</span></div>
+</section>
+
+<!-- ========== текст ========== -->
+<section class="feature center" id="text">
+  <div class="wrap">
+    <p class="eyebrow reveal">Текст</p>
+    <h2 class="reveal" style="--d:.05s">Надпись —<br>и&nbsp;сразу в&nbsp;кривые.</h2>
+    <p class="body narrow reveal" style="--d:.1s">Кликните по&nbsp;странице и&nbsp;печатайте. Шестнадцать шрифтов с&nbsp;кириллицей — от&nbsp;строгого Montserrat до&nbsp;рукописного Great Vibes, а&nbsp;можно загрузить свой. Готово — нажмите «В&nbsp;кривые», и&nbsp;буквы станут контурами для&nbsp;плоттера, лазера или&nbsp;типографии.</p>
+    <div class="window wide-shot reveal" style="--d:.15s">
+      <div class="bar"><i></i><i></i><i></i><span>Афиша.kontur — Контур</span></div>
+      <img src="../assets/kontur/text.jpg?v=1" width="2880" height="1800" alt="Афиша с надписями разными шрифтами; справа — раздел «Текст»: шрифт, размер, начертание, интервалы и кнопка «В кривые»" loading="lazy">
+    </div>
+    <div class="fonts kt-fonts reveal"><span style="font-family:Unbounded">Unbounded</span><span style="font-family:'Russo One'">Russo One</span><span class="lg" style="font-family:Lobster">Lobster</span><span class="lg" style="font-family:'Great Vibes'">Great Vibes</span><span class="lg" style="font-family:Caveat">Caveat</span><span style="font-family:'Playfair Display';font-style:italic">Playfair Display</span><span>Montserrat</span><span>Roboto</span><span>PT Sans</span><span>Oswald</span><span>Rubik</span><span>Exo 2</span><span>Comfortaa</span><span>Open Sans</span><span>PT Serif</span><span>Marck Script</span><span class="on">+ свой шрифт</span></div>
+    <p class="hint reveal">Размер — в&nbsp;пунктах, как в&nbsp;типографии. Межстрочный и&nbsp;межбуквенный интервал, выравнивание, жирный и&nbsp;курсив.</p>
+  </div>
+</section>
+
+<!-- ========== перо и узлы ========== -->
+<section class="feature" id="pen">
+  <div class="wrap grid2">
+    <div class="copy">
+      <p class="eyebrow reveal">Перо и&nbsp;узлы</p>
+      <h2 class="reveal" style="--d:.05s">Кривые Безье.<br>Точно по&nbsp;форме.</h2>
+      <p class="body reveal" style="--d:.1s">Ставьте точки пером: щелчок — угол, протяжка — плавная дуга. Инструментом «Форма» тяните узлы и&nbsp;рычаги, добавляйте и&nbsp;убирайте узлы двойным кликом — контур ляжет ровно так, как задумано.</p>
+      <ul class="checks reveal" style="--d:.15s">
+        <li>Острый и&nbsp;сглаженный узел, Alt — излом рычага</li>
+        <li>«В&nbsp;кривую», «В&nbsp;прямую», «Замкнуть»</li>
+        <li>Объединить контуры — внутренние станут дырками</li>
+        <li>История из&nbsp;200 шагов</li>
+      </ul>
+    </div>
+    <div class="shot-stack reveal" style="--d:.1s">
+      <div class="card zoom"><img src="../assets/kontur/nodes.jpg?v=1" width="2160" height="1556" alt="Сердце из кривых Безье: узлы и рычаги выбранного узла, внизу — волна пером" loading="lazy"></div>
+      <div class="tag t1"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>Перо — F5, узлы — F10</div>
+      <div class="tag t2"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M6 9c0 6 6 9 12 6"/></svg>Клавиши как в&nbsp;CorelDRAW</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== фигуры ========== -->
+<section class="feature" id="shapes">
+  <div class="wrap grid2 rev">
+    <div class="copy">
+      <p class="eyebrow reveal">Фигуры</p>
+      <h2 class="reveal" style="--d:.05s">Прямоугольник,<br>эллипс, звезда.</h2>
+      <p class="body reveal" style="--d:.1s">Протяните рамку — фигура готова. У&nbsp;многоугольника и&nbsp;звезды задаётся число углов и&nbsp;глубина лучей. Заливка, обводка в&nbsp;миллиметрах, прозрачность — а&nbsp;любая фигура превращается в&nbsp;кривую для&nbsp;правки.</p>
+      <div class="chips reveal" style="--d:.15s"><span>Прямоугольник · F6</span><span>Эллипс · F7</span><span>Многоугольник</span><span class="on">Звезда</span><span>Пипетка</span></div>
+    </div>
+    <div class="shot-stack reveal" style="--d:.1s">
+      <div class="card zoom"><img src="../assets/kontur/shapes.jpg?v=1" width="2272" height="1728" alt="Прямоугольник, эллипс, шестиугольник и звезда; вверху — число лучей и глубина звезды" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== сложить / вычесть ========== -->
+<section class="feature center" id="bool">
+  <div class="wrap">
+    <p class="eyebrow reveal">Сложить · Вычесть · Пересечь · Исключить</p>
+    <h2 class="reveal" style="--d:.05s">Сложные формы —<br>из&nbsp;простых.</h2>
+    <p class="body narrow reveal" style="--d:.1s">Наложите фигуры друг на&nbsp;друга и&nbsp;выберите, что получить: общий силуэт, вырез, пересечение или&nbsp;всё, кроме него. Результат — аккуратные кривые с&nbsp;малым числом узлов, готовые к&nbsp;резке.</p>
+    <div class="demo bool-demo reveal" id="boolDemo" style="--d:.15s">
+      <svg viewBox="0 0 480 360" aria-hidden="true">
+        <defs>
+          <linearGradient id="bG" gradientUnits="userSpaceOnUse" x1="70" y1="305" x2="405" y2="50"><stop offset="0" stop-color="#19d3a2"/><stop offset=".5" stop-color="#3d8bfd"/><stop offset="1" stop-color="#a35bff"/></linearGradient>
+          <mask id="bSub"><rect width="480" height="360" fill="#fff" stroke="none"/><circle cx="290" cy="190" r="115" fill="#000" stroke="none"/></mask>
+          <clipPath id="bInt"><rect x="70" y="50" width="200" height="200"/></clipPath>
+        </defs>
+        <g class="r" data-m="unite"><rect x="70" y="50" width="200" height="200"/><circle cx="290" cy="190" r="115"/></g>
+        <g class="r" data-m="sub"><rect x="70" y="50" width="200" height="200" mask="url(#bSub)"/></g>
+        <g class="r" data-m="int"><circle cx="290" cy="190" r="115" clip-path="url(#bInt)"/></g>
+        <g class="r" data-m="xor"><path fill-rule="evenodd" d="M70 50H270V250H70Z M175 190a115 115 0 1 0 230 0a115 115 0 1 0 -230 0Z"/></g>
+        <rect class="ghost" x="70" y="50" width="200" height="200"/><circle class="ghost" cx="290" cy="190" r="115"/>
+      </svg>
+      <div class="sel-mode" id="boolMode"><span data-m="unite">Сложить</span><span data-m="sub">Вычесть</span><span data-m="int">Пересечь</span><span data-m="xor">Исключить</span></div>
+    </div>
+    <p class="hint reveal">Нажмите на&nbsp;операцию, чтобы посмотреть</p>
+    <div class="duo">
+      <figure class="card reveal"><img src="../assets/kontur/bool.jpg?v=1" width="606" height="642" alt="Раздел «Кривая»: заливка, обводка и кнопки «Сложить», «Вычесть», «Пересечь», «Исключить», «Объединить», «Разъединить»" loading="lazy">
+        <figcaption><b>Одна кнопка.</b> Выберите две фигуры или&nbsp;больше — и&nbsp;нажмите нужную операцию в&nbsp;разделе «Кривая».</figcaption></figure>
+      <figure class="card reveal st-list" style="--d:.1s">
+        <ul class="checks">
+          <li>«Вычесть» вырезает верхние фигуры из&nbsp;нижней</li>
+          <li>Цвет и&nbsp;место результата — как у&nbsp;нижней фигуры</li>
+          <li>Фигуры с&nbsp;дырками учитываются правильно</li>
+          <li>Надписи сами становятся кривыми</li>
+        </ul>
+        <figcaption><b>Чашка из&nbsp;двух фигур.</b> Эллипс минус прямоугольник — и&nbsp;готова чаша для&nbsp;логотипа кофейни, как на&nbsp;первом экране.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== выравнивание ========== -->
+<section class="feature" id="align">
+  <div class="wrap grid2">
+    <div class="copy">
+      <p class="eyebrow reveal">Выравнивание</p>
+      <h2 class="reveal" style="--d:.05s">Ровно.<br>Без&nbsp;линейки.</h2>
+      <p class="body reveal" style="--d:.1s">По&nbsp;левому краю, по&nbsp;центру, по&nbsp;верху — относительно выделения или&nbsp;всей страницы. А&nbsp;«Распределить» расставит три и&nbsp;больше объекта с&nbsp;равными промежутками.</p>
+      <ul class="checks reveal" style="--d:.15s">
+        <li>Шесть кнопок: края и&nbsp;центры по&nbsp;горизонтали и&nbsp;вертикали</li>
+        <li>«В&nbsp;центр страницы» — одним нажатием</li>
+        <li>Равные промежутки по&nbsp;горизонтали или&nbsp;вертикали</li>
+      </ul>
+    </div>
+    <div class="demo al-demo reveal st0" id="alDemo" style="--d:.1s" aria-hidden="true">
+      <i class="al-guide v"></i><i class="al-guide h"></i>
+      <i class="al s1"></i><i class="al s2"></i><i class="al s3"></i>
+      <div class="sel-mode" id="alMode"><span>Как есть</span><span>По&nbsp;левому</span><span>По&nbsp;центру</span><span>Поровну</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== линейки, сетка, привязка ========== -->
+<section class="feature center" id="precise">
+  <div class="wrap">
+    <p class="eyebrow reveal">Линейки · Направляющие · Сетка · Привязка</p>
+    <h2 class="reveal" style="--d:.05s">Точно<br>до&nbsp;миллиметра.</h2>
+    <p class="body narrow reveal" style="--d:.1s">Всё меряется в&nbsp;миллиметрах: страница A5, A4, A3 или&nbsp;свой размер. Тяните направляющие от&nbsp;линеек, включите сетку — а&nbsp;привязка сама прилепит фигуру к&nbsp;направляющей, краю или&nbsp;центру страницы, к&nbsp;соседнему объекту и&nbsp;его узлам. Розовые линии показывают, к&nbsp;чему прилипло.</p>
+    <div class="window wide-shot reveal" style="--d:.15s">
+      <div class="bar"><i></i><i></i><i></i><span>Кофейня.kontur — Контур</span></div>
+      <img src="../assets/kontur/snap.jpg?v=1" width="2880" height="1800" alt="Чашку перетаскивают мышью: розовые линии привязки к направляющей и центру страницы, сверху и слева — линейки в миллиметрах" loading="lazy">
+    </div>
+    <div class="chips st-chips reveal"><span>Линейки в&nbsp;мм</span><span>Направляющие — тянуть от&nbsp;линейки</span><span>Сетка с&nbsp;любым шагом</span><span class="on">Привязка к&nbsp;узлам и&nbsp;краям</span><span>Стрелки — сдвиг на&nbsp;1&nbsp;мм</span></div>
+  </div>
+</section>
+
+<!-- ========== QR-коды ========== -->
+<section class="feature" id="qr">
+  <div class="wrap grid2 rev">
+    <div class="copy">
+      <p class="eyebrow reveal">QR-коды</p>
+      <h2 class="reveal" style="--d:.05s">QR-код —<br>вектором.</h2>
+      <p class="body reveal" style="--d:.1s">Сайт, Wi-Fi, визитка, Telegram — заполните поля, и&nbsp;код встанет на&nbsp;страницу контурами, а&nbsp;не&nbsp;картинкой. Растяните хоть на&nbsp;баннер, перекрасьте и&nbsp;отправьте в&nbsp;типографию без&nbsp;потери качества. Если точки выйдут слишком мелкими для&nbsp;печати, Контур предупредит.</p>
+      <div class="chips reveal" style="--d:.15s"><span>Сайт</span><span class="on">Wi-Fi</span><span>Визитка</span><span>Telegram</span><span>WhatsApp</span><span>Телефон</span><span>SMS</span><span>E-mail</span><span>Текст</span><span>Геолокация</span><span>Событие в&nbsp;календарь</span></div>
+    </div>
+    <div class="shot-stack reveal" style="--d:.1s">
+      <div class="card zoom"><img src="../assets/kontur/qr.jpg?v=1" width="1376" height="1000" alt="Окно «QR-код»: подключение к Wi-Fi, имя сети и пароль, размер в миллиметрах, коррекция ошибок, цвета и предпросмотр" loading="lazy"></div>
+      <div class="tag t1"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 17h3v3h-3z"/></svg>Вектор, а&nbsp;не&nbsp;картинка</div>
+      <div class="tag t2"><svg viewBox="0 0 24 24"><path d="M12 20h.01M2 8.82a15 15 0 0 1 20 0M5 12.86a10 10 0 0 1 14 0M8.5 16.43a5 5 0 0 1 7 0"/></svg>Гости подключатся к&nbsp;Wi-Fi</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== обводка фото ========== -->
+<section class="feature" id="trace">
+  <div class="wrap grid2">
+    <div class="copy">
+      <p class="eyebrow reveal">Обводка фото и&nbsp;логотипов</p>
+      <h2 class="reveal" style="--d:.05s">Была картинка —<br>стал контур.</h2>
+      <p class="body reveal" style="--d:.1s">Перетащите фото или&nbsp;логотип, закрепите его и&nbsp;сделайте полупрозрачным — и&nbsp;обводите пером поверх. Так из&nbsp;картинки получается чистый вектор для&nbsp;наклейки, гравировки или&nbsp;вывески.</p>
+      <ul class="checks reveal" style="--d:.15s">
+        <li>JPG, PNG, WebP, SVG, HEIC с&nbsp;iPhone, TIFF</li>
+        <li>Яркость, контраст, Ч/Б — чтобы края было лучше видно</li>
+        <li>Обрезка фото и&nbsp;точный размер в&nbsp;миллиметрах</li>
+      </ul>
+    </div>
+    <div class="shot-stack reveal" style="--d:.1s">
+      <div class="card zoom"><img src="../assets/kontur/trace.jpg?v=1" width="2160" height="1556" alt="Фото гор закреплено и сделано полупрозрачным, поверх — розовый контур вершины с узлами" loading="lazy"></div>
+      <div class="tag t2"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Фото закреплено — не&nbsp;сдвинется</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== экспорт ========== -->
+<section class="feature" id="export">
+  <div class="wrap grid2 rev">
+    <div class="copy">
+      <p class="eyebrow reveal">Экспорт</p>
+      <h2 class="reveal" style="--d:.05s">PDF, SVG, DXF<br>и&nbsp;не&nbsp;только.</h2>
+      <p class="body reveal" style="--d:.1s">Каждый формат — с&nbsp;подсказкой, для&nbsp;чего он. А&nbsp;вес файла видно ещё до&nbsp;сохранения.</p>
+      <dl class="formats reveal" style="--d:.15s">
+        <div><dt>PDF</dt><dd>печать и&nbsp;типография</dd></div>
+        <div><dt>SVG</dt><dd>сайты и&nbsp;другие редакторы</dd></div>
+        <div><dt>EPS</dt><dd>типографии и&nbsp;старые программы</dd></div>
+        <div><dt>DXF</dt><dd>лазер, фрезер, режущий плоттер</dd></div>
+        <div><dt>PNG</dt><dd>картинка с&nbsp;нужным dpi, до&nbsp;1200</dd></div>
+      </dl>
+    </div>
+    <div class="shot-stack reveal" style="--d:.1s">
+      <div class="card zoom"><img src="../assets/kontur/export.jpg?v=1" width="1060" height="800" alt="Окно «Экспорт»: форматы SVG, PDF, EPS, DXF, PNG, размер 200 × 130 мм и вес файла" loading="lazy"></div>
+      <div class="tag t1"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Вес файла — заранее</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== всё остальное ========== -->
+<section class="feature" id="more">
+  <div class="wrap">
+    <h2 class="reveal center-t">И это ещё не&nbsp;всё.</h2>
+    <div class="bento">
+      <div class="b-card wide with-shot reveal"><div><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="10" cy="12" r="2"/><path d="m20 17-1.3-1.3a2 2 0 0 0-2.8 0L10 22"/></svg>
+        <h3>Подскажет, с&nbsp;чего начать.</h3><p>На&nbsp;пустой странице — кнопки «Фото или&nbsp;логотип», «Перо», «Фигуры», «Текст», «QR-код» и&nbsp;главные клавиши. Картинку можно просто перетащить в&nbsp;окно или&nbsp;вставить из&nbsp;буфера.</p></div>
+        <img class="b-shot" src="../assets/kontur/empty.jpg?v=1" width="940" height="700" alt="Подсказка «Пустая страница — с чего начать?»" loading="lazy"></div>
+      <div class="b-card reveal" style="--d:.06s"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+        <h3>Автосохранение.</h3><p>Закрыли вкладку? При&nbsp;следующем запуске Контур предложит вернуть работу.</p></div>
+      <div class="b-card reveal"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg>
+        <h3>История.</h3><p>200 шагов со&nbsp;списком: «Новая фигура», «Заливка», «Перемещение»… Клик — и&nbsp;вы на&nbsp;нужном шаге.</p></div>
+      <div class="b-card reveal" style="--d:.06s"><svg viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+        <h3>Свой шрифт.</h3><p>Загрузите TTF, OTF или&nbsp;WOFF — он сохранится прямо в&nbsp;проекте и&nbsp;откроется на&nbsp;любом компьютере.</p></div>
+      <div class="b-card reveal" style="--d:.12s"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+        <h3>Проект — один файл.</h3><p>Файл .kontur хранит всё: кривые, фото, шрифты и&nbsp;направляющие.</p></div>
+      <div class="b-card wide reveal"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></svg>
+        <h3>Клавиши как в&nbsp;CorelDRAW.</h3><p>Если вы работали в&nbsp;профессиональных векторных редакторах — руки всё вспомнят сами.</p>
+        <div class="keys"><kbd>F5</kbd><kbd>F6</kbd><kbd>F7</kbd><kbd>F8</kbd><kbd>F10</kbd><kbd>Ctrl+L</kbd><kbd>Ctrl+K</kbd><kbd>Ctrl+D</kbd><kbd>Ctrl+E</kbd><kbd>Q</kbd><kbd>Пробел</kbd></div></div>
+      <div class="b-card reveal" style="--d:.06s"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.56-2.5 5.56-5.55C21.96 6.01 17.46 2 12 2z"/></svg>
+        <h3>Палитра под&nbsp;рукой.</h3><p>Клик по&nbsp;цвету — заливка, правый клик — обводка. Пипетка возьмёт цвет с&nbsp;любого объекта.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== вместе с пользователями ========== -->
+<section class="together" id="together">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow reveal">Бета-версия <span data-ver>0.1</span></p>
+      <h2 class="reveal" style="--d:.05s">Контур создаётся<br>вместе с&nbsp;вами.</h2>
+      <p class="body narrow reveal" style="--d:.1s">Это ранняя версия: основа уже работает, но&nbsp;многого ещё нет, а&nbsp;что-то может сломаться. Расскажите, чего вам не&nbsp;хватает, — автор читает каждое сообщение. Бот и&nbsp;канал у&nbsp;Контура и&nbsp;Фотомагазина общие.</p>
+    </div>
+    <div class="ways">
+      <a class="way reveal" data-form="idea" href="#together"><svg viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5M9 18h6M10 22h4"/></svg><h3>Предложите идею</h3><p>Чего не&nbsp;хватает для&nbsp;вашей работы — резки, печати, вывесок? Короткая форма — и&nbsp;сообщение уже у&nbsp;автора.</p><span class="go">Написать <span>›</span></span></a>
+      <a class="way reveal" style="--d:.08s" data-form="bug" href="#together"><svg viewBox="0 0 24 24"><path d="m8 2 1.88 1.88M14.12 3.88 16 2M9 7.13v-1a3 3 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6M12 20v-9M6.53 9C4.6 8.8 3 7.1 3 5M6 13H2M3 21c0-2.1 1.7-3.9 3.8-4M20.97 5c0 2.1-1.6 3.8-3.5 4M22 13h-4M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg><h3>Сообщите об&nbsp;ошибке</h3><p>Что-то сломалось? Опишите, что произошло. Из&nbsp;программы — через кнопку «Обратная связь»: она сама приложит версию и&nbsp;браузер.</p><span class="go">Сообщить <span>›</span></span></a>
+      <a class="way reveal" style="--d:.16s" data-tg="channel" href="#together"><svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><h3>Следите за&nbsp;новостями</h3><p>Новые версии Контура и&nbsp;Фотомагазина, планы и&nbsp;опросы — в&nbsp;Telegram-канале.</p><span class="go">Подписаться <span>›</span></span></a>
+    </div>
+    <div class="cta reveal"><a class="btn btn-lg tg" data-tg="channel" href="#together"><svg viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>Подписаться на&nbsp;канал</a><a class="btn btn-lg ghost" data-tg="bot" href="#together"><svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Написать автору</a></div>
+    <div class="roadmap">
+      <h3 class="reveal">Что дальше? Решаете вы.</h3>
+      <p class="reveal" style="--d:.05s">Идеи, которые уже на&nbsp;очереди. Голосуйте в&nbsp;опросах нашего канала — самые нужные появятся первыми.</p>
+      <ul class="road reveal" style="--d:.1s">
+        <li class="done">Текст и&nbsp;«В&nbsp;кривые» <em>готово в&nbsp;0.1</em></li><li class="done">Сложить и&nbsp;вычесть <em>готово в&nbsp;0.1</em></li><li class="done">Привязка и&nbsp;направляющие <em>готово в&nbsp;0.1</em></li>
+        <li>Группы</li><li>Открывать SVG и&nbsp;PDF кривыми</li><li>Контур по&nbsp;фото одной кнопкой</li><li>Градиенты</li><li>Пунктир и&nbsp;отступ контура для&nbsp;резки</li>
+        <li>Метки реза и&nbsp;CMYK</li><li>Несколько страниц</li><li>Английская версия</li><li class="you">+ ваша идея</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== приватность ========== -->
+<section class="privacy">
+  <div class="wrap center">
+    <div class="lock reveal"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+    <h2 class="reveal" style="--d:.05s">Ваши макеты<br>остаются у&nbsp;вас.</h2>
+    <p class="body narrow reveal" style="--d:.1s">Контур работает прямо на&nbsp;вашем компьютере, в&nbsp;браузере. Никаких серверов, облака и&nbsp;аккаунтов — логотипы, фото и&nbsp;макеты никуда не&nbsp;загружаются.</p>
+  </div>
+</section>
+
+<!-- ========== скачать ========== -->
+<section class="download" id="download">
+  <div class="wrap center">
+    <img class="klogo big reveal" src="../assets/kontur/icon.svg?v=1" width="96" height="96" alt="">
+    <h2 class="reveal" style="--d:.05s">Начните прямо сейчас.</h2>
+    <p class="body narrow reveal" style="--d:.1s">Бесплатно. Без регистрации. Архив меньше 100&nbsp;КБ — программа и&nbsp;короткая инструкция.</p>
+    <p class="fine reveal" style="--d:.12s">Бета-версия <span data-ver>0.1</span>. Нашли ошибку или&nbsp;чего-то не&nbsp;хватает? <a class="inl" data-form="idea" href="#together">Напишите нам</a>.</p>
+    <div class="cta reveal" style="--d:.15s">
+      <a class="btn btn-lg" href="https://github.com/fotomagazin/kontur/releases/latest/download/kontur.zip">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Скачать Контур</a>
+    </div>
+    <p class="dl-count" hidden><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg><b>0</b>&nbsp;<span>скачиваний</span></p>
+    <ol class="steps">
+      <li class="reveal"><b>1</b><h3>Скачайте</h3><p>Архив с&nbsp;программой и&nbsp;инструкцией «Как пользоваться».</p></li>
+      <li class="reveal" style="--d:.08s"><b>2</b><h3>Откройте</h3><p>Распакуйте архив и&nbsp;откройте kontur.html — программа запустится в&nbsp;браузере.</p></li>
+      <li class="reveal" style="--d:.16s"><b>3</b><h3>Рисуйте</h3><p>Перетащите логотип, возьмите перо или&nbsp;вставьте QR-код. Всё остальное уже внутри.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== вопросы ========== -->
+<section class="faq" id="faq">
+  <div class="wrap narrow-w">
+    <h2 class="reveal center-t">Вопросы и&nbsp;ответы.</h2>
+    <details class="reveal"><summary>Для чего подходит Контур?</summary><p>Для&nbsp;всего, где нужны чистые контуры, а&nbsp;не&nbsp;пиксели: вывески и&nbsp;таблички, наклейки и&nbsp;трафареты, файлы для&nbsp;режущего плоттера, лазера и&nbsp;фрезера, логотипы, визитки и&nbsp;листовки для&nbsp;типографии, QR-коды для&nbsp;меню и&nbsp;упаковки.</p></details>
+    <details class="reveal"><summary>Чем Контур отличается от&nbsp;Фотомагазина?</summary><p>Фотомагазин работает с&nbsp;фотографиями — пикселями и&nbsp;слоями. Контур — с&nbsp;векторами: линиями и&nbsp;кривыми, которые можно увеличить до&nbsp;любого размера без&nbsp;потери качества. Это две отдельные программы, у&nbsp;каждой свой файл, но&nbsp;дизайн, бот и&nbsp;канал у&nbsp;них общие.</p></details>
+    <details class="reveal"><summary>Почему «бета»?</summary><p>Контур только начинает свой путь. Всё, что описано на&nbsp;этой странице, уже работает, но&nbsp;программа ещё развивается: будут появляться новые инструменты, а&nbsp;иногда — встречаться ошибки. Ваши отзывы помогают решить, что делать в&nbsp;первую очередь.</p></details>
+    <details class="reveal"><summary>Какие файлы он сохраняет?</summary><p>Проект — в&nbsp;файл .kontur со&nbsp;всем содержимым. Для&nbsp;работы — экспорт в&nbsp;SVG, PDF, EPS, DXF и&nbsp;PNG. Фото попадают в&nbsp;SVG, PDF и&nbsp;PNG; в&nbsp;EPS и&nbsp;DXF уходят только векторы — об&nbsp;этом окно «Экспорт» предупредит.</p></details>
+    <details class="reveal"><summary>Это правда бесплатно?</summary><p>Да. Без пробного периода, подписок и&nbsp;рекламы.</p></details>
+    <details class="reveal"><summary>Нужно что-то устанавливать?</summary><p>Нет. Скачайте архив, распакуйте его двойным кликом и&nbsp;откройте kontur.html — программа запустится в&nbsp;браузере. Вся программа — это один этот файл, а&nbsp;рядом лежит короткая инструкция.</p></details>
+    <details class="reveal"><summary>Работает без интернета?</summary><p>Почти всё — да. Интернет нужен, чтобы при&nbsp;первом использовании скачать шрифты для&nbsp;текста, модуль для&nbsp;«Сложить / Вычесть» и&nbsp;открыть TIFF или&nbsp;HEIC.</p></details>
+    <details class="reveal"><summary>В каком браузере лучше?</summary><p>Лучше всего — в&nbsp;Google Chrome или&nbsp;Microsoft Edge на&nbsp;Mac и&nbsp;Windows: там работают настоящие «Сохранить» и&nbsp;«Сохранить как».</p></details>
+    <details class="reveal"><summary>Как предложить идею или&nbsp;сообщить об&nbsp;ошибке?</summary><p>Через <a class="inl" data-form="idea" href="#together">короткую форму</a> или нашего <a class="inl" data-tg="bot" href="#together">Telegram-бота</a> — сообщение придёт напрямую автору. Или прямо из&nbsp;программы: кнопка «Обратная связь» в&nbsp;верхней панели. Новости — в&nbsp;<a class="inl" data-tg="channel" href="#together">Telegram-канале</a>.</p></details>
+  </div>
+</section>
+
+<!-- ========== семья программ ========== -->
+<section class="family">
+  <div class="wrap">
+    <div class="center"><p class="eyebrow reveal">Из той же семьи</p>
+      <h2 class="reveal" style="--d:.05s">Ещё от&nbsp;создателей<br>Контура.</h2></div>
+    <a class="fam-card reveal" href="../" style="--d:.1s">
+      <div class="fc-copy">
+        <div class="fc-head"><i class="logo"></i><h3>Фотомагазин</h3><span class="beta fm-beta">Бета</span></div>
+        <p>Фоторедактор со&nbsp;слоями: ретушь, стили в&nbsp;один клик, кривые, свет и&nbsp;цвет, кадрирование и&nbsp;текст. Тоже один файл, тоже бесплатно.</p>
+        <div class="fmt"><span>Слои</span><span>Ретушь</span><span>Стили</span><span>RAW</span><span>PSD</span></div>
+        <span class="go">Подробнее о&nbsp;Фотомагазине <span>›</span></span>
+      </div>
+      <div class="fc-shot"><img src="../assets/hero.jpg?v=5" width="3200" height="2000" alt="Окно Фотомагазина: пейзаж с горами на закате и панель «Свет и цвет»" loading="lazy"></div>
+    </a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="brand" href="#top"><img class="klogo" src="../assets/kontur/icon.svg?v=1" alt="">Контур <span>· Contour</span></a>
+    <p><a class="inl" href="../">Фотомагазин</a> · <a class="inl" data-tg="channel" href="#together">Канал в&nbsp;Telegram</a> · <a class="inl" data-tg="bot" href="#together">Написать автору</a> · © <span id="year">2026</span> Контур. Сделано для&nbsp;тех, кто печатает, режет и&nbsp;рисует.</p>
+  </div>
+</footer>
+
+<!-- окно отзыва -->
+<div class="fb-modal" id="fbModal" role="dialog" aria-modal="true" aria-labelledby="fbTitle">
+  <form class="fb-dlg" id="fbForm" novalidate>
+    <button type="button" class="fb-x" id="fbClose" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <h3 id="fbTitle">Обратная связь</h3>
+    <p class="fb-sub">Это бета-версия Контура. Сообщение придёт прямо автору — он читает каждое.</p>
+    <div class="fb-seg" id="fbType"><button type="button" data-t="idea">💡 Идея</button><button type="button" data-t="bug">🐞 Ошибка</button><button type="button" data-t="other">💬 Другое</button></div>
+    <textarea id="fbText" maxlength="3000"></textarea>
+    <input type="text" id="fbContact" maxlength="100" placeholder="Контакт для ответа — необязательно" title="@telegram или почта, если хотите получить ответ">
+    <input type="text" id="fbHp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="fb-f"><span id="fbStatus" role="status"></span><button type="submit" class="btn" id="fbSend">Отправить</button></div>
+    <div class="fb-ok"><div class="ok-ic">✓</div><h3>Спасибо!</h3><p>Сообщение отправлено автору.</p></div>
+  </form>
+</div>
+
+<script src="../script.js"></script>
+<script src="kontur.js"></script>
+</body>
+</html>

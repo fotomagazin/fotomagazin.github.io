@@ -21,11 +21,14 @@
 <!-- ========== навигация ========== -->
 <nav class="nav" id="nav">
   <div class="nav-in">
-    <a class="brand" href="#top"><i class="logo"></i>Фотомагазин<span class="beta">Бета</span></a>
+    <a class="brand" href="#top"><i class="logo"></i><span class="bn">Фотомагазин</span><span class="beta">Бета</span></a>
     <div class="links">
       <a href="#retouch">Ретушь</a><a href="#styles">Стили</a><a href="#layers">Слои</a><a href="#raw">Свет и цвет</a><a href="#crop">Инструменты</a><a href="#together">Участвовать</a><a href="#faq">Вопросы</a>
     </div>
-    <a class="btn btn-sm" href="https://github.com/fotomagazin/fotomagazin/releases/latest/download/fotomagazin.zip">Скачать</a>
+    <div class="nav-r">
+      <div class="fam" aria-label="Программы"><a class="on" href="./" aria-current="page">Фотомагазин</a><a href="kontur/">Контур</a></div>
+      <a class="btn btn-sm" href="https://github.com/fotomagazin/fotomagazin/releases/latest/download/fotomagazin.zip">Скачать</a>
+    </div>
   </div>
 </nav>
 
@@ -406,10 +409,27 @@
   </div>
 </section>
 
+<!-- ========== семья программ ========== -->
+<section class="family" id="family">
+  <div class="wrap">
+    <div class="center"><p class="eyebrow reveal">Новая программа</p>
+      <h2 class="reveal" style="--d:.05s">Ещё от&nbsp;создателей<br>Фотомагазина.</h2></div>
+    <a class="fam-card reveal" href="kontur/" style="--d:.1s">
+      <div class="fc-copy">
+        <div class="fc-head"><img class="klogo" src="assets/kontur/icon.svg?v=1" width="56" height="56" alt=""><h3>Контур</h3><span class="beta kt-beta">Бета</span></div>
+        <p>Векторный редактор для&nbsp;печати, резки, вывесок и&nbsp;QR-кодов: перо и&nbsp;кривые Безье, фигуры, текст в&nbsp;кривые, точные миллиметры. Тоже один файл, тоже бесплатно.</p>
+        <div class="fmt"><span>SVG</span><span>PDF</span><span>EPS</span><span>DXF</span><span>PNG</span><span>QR</span></div>
+        <span class="go">Подробнее о&nbsp;Контуре <span>›</span></span>
+      </div>
+      <div class="fc-shot"><img src="assets/kontur/hero.jpg?v=1" width="2880" height="1800" alt="Окно Контура: вывеска кофейни с надписью, QR-кодом и направляющими" loading="lazy"></div>
+    </a>
+  </div>
+</section>
+
 <footer class="foot">
   <div class="wrap foot-in">
     <a class="brand" href="#top"><i class="logo"></i>Фотомагазин <span>· Fotomag</span></a>
-    <p><a class="inl" data-tg="channel" href="#together">Канал в&nbsp;Telegram</a> · <a class="inl" data-tg="bot" href="#together">Написать автору</a> · © <span id="year">2026</span> Фотомагазин. Сделано с&nbsp;любовью к&nbsp;фотографии.</p>
+    <p><a class="inl" href="kontur/">Контур</a> · <a class="inl" data-tg="channel" href="#together">Канал в&nbsp;Telegram</a> · <a class="inl" data-tg="bot" href="#together">Написать автору</a> · © <span id="year">2026</span> Фотомагазин. Сделано с&nbsp;любовью к&nbsp;фотографии.</p>
   </div>
 </footer>
 
