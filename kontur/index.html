@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Контур — векторный редактор для печати, резки и QR-кодов прямо в браузере</title>
-<meta name="description" content="Бесплатный векторный редактор: перо и кривые Безье, фигуры, текст с переводом в кривые, сложить и вычесть, выравнивание, привязка, векторные QR-коды. Экспорт SVG, PDF, EPS, DXF и PNG. Один файл, работает в браузере — без установки и регистрации.">
+<title>Контур — векторный редактор для Mac и Windows: печать, резка, вывески и QR-коды</title>
+<meta name="description" content="Бесплатный векторный редактор: перо и кривые Безье, фигуры, текст с переводом в кривые, сложить и вычесть, выравнивание, привязка, векторные QR-коды. Открывает файлы Illustrator и PDF кривыми. Экспорт SVG, PDF, EPS, DXF и PNG. Программа для Mac и Windows, есть браузерная версия. Бесплатно, без регистрации.">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Контур — векторный редактор для печати и резки">
-<meta property="og:description" content="Перо, фигуры, текст в кривые, векторные QR-коды. Экспорт SVG, PDF, EPS, DXF, PNG. Один файл, работает в браузере. Бесплатно.">
-<meta property="og:image" content="../assets/kontur/hero.jpg?v=1">
-<link rel="icon" href="../assets/kontur/icon.svg?v=1" type="image/svg+xml">
+<meta property="og:description" content="Перо, фигуры, текст в кривые, векторные QR-коды. Экспорт SVG, PDF, EPS, DXF, PNG. Программа для Mac и Windows. Бесплатно.">
+<meta property="og:image" content="../assets/kontur/hero.jpg?v=2">
+<link rel="icon" href="../assets/kontur/icon.svg?v=2" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Unbounded:wght@700&family=Lobster&family=Caveat:wght@700&family=Russo+One&family=Great+Vibes&family=Playfair+Display:ital,wght@1,700&display=swap">
@@ -22,13 +22,13 @@
 <!-- ========== навигация ========== -->
 <nav class="nav" id="nav">
   <div class="nav-in">
-    <a class="brand" href="#top"><img class="klogo" src="../assets/kontur/icon.svg?v=1" alt=""><span class="bn">Контур</span><span class="beta">Бета</span></a>
+    <a class="brand" href="#top"><img class="klogo" src="../assets/kontur/icon.svg?v=2" alt=""><span class="bn">Контур</span><span class="beta">Бета</span></a>
     <div class="links">
-      <a href="#text">Текст</a><a href="#pen">Перо</a><a href="#bool">Фигуры</a><a href="#qr">QR-коды</a><a href="#export">Экспорт</a><a href="#together">Участвовать</a><a href="#faq">Вопросы</a>
+      <a href="#get">Программа</a><a href="#text">Текст</a><a href="#pen">Перо</a><a href="#qr">QR-коды</a><a href="#import">Импорт</a><a href="#export">Экспорт</a><a href="#faq">Вопросы</a>
     </div>
     <div class="nav-r">
       <div class="fam" aria-label="Программы"><a href="../">Фотомагазин</a><a class="on" href="./" aria-current="page">Контур</a></div>
-      <a class="btn btn-sm" href="https://github.com/fotomagazin/kontur/releases/latest/download/kontur.zip">Скачать</a>
+      <a class="btn btn-sm" data-dl="main" data-short href="https://github.com/fotomagazin/kontur/releases/latest/download/Kontur-mac-apple.dmg">Скачать</a>
     </div>
   </div>
 </nav>
@@ -36,22 +36,23 @@
 <!-- ========== первый экран ========== -->
 <header class="hero" id="top">
   <div class="wrap hero-text">
-    <img class="klogo hero-logo reveal" src="../assets/kontur/icon.svg?v=1" width="72" height="72" alt="Логотип Контура">
-    <a class="pill reveal" href="../" style="--d:.04s"><span class="dot"></span>От&nbsp;создателей Фотомагазина<span class="arr">›</span></a>
+    <img class="klogo hero-logo reveal" src="../assets/kontur/icon.svg?v=2" width="72" height="72" alt="Логотип Контура">
+    <a class="pill reveal" href="#get" style="--d:.04s"><span class="dot"></span>Новое в&nbsp;0.2: программы для&nbsp;Mac и&nbsp;Windows, импорт .ai и&nbsp;PDF<span class="arr">›</span></a>
     <h1 class="reveal" style="--d:.08s"><span class="grad">Контур.</span></h1>
-    <p class="lead reveal" style="--d:.16s">Векторный редактор для&nbsp;печати, резки, вывесок и&nbsp;QR-кодов.<br><span>Один файл. Работает в&nbsp;браузере. Бесплатно.</span></p>
+    <p class="lead reveal" style="--d:.16s">Векторный редактор для&nbsp;печати, резки, вывесок и&nbsp;QR-кодов.<br><span>Программа для&nbsp;Mac и&nbsp;Windows. Бесплатно.</span></p>
     <div class="cta reveal" style="--d:.24s">
-      <a class="btn btn-lg" href="https://github.com/fotomagazin/kontur/releases/latest/download/kontur.zip">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Скачать бесплатно</a>
+      <a class="btn btn-lg" data-dl="main" href="https://github.com/fotomagazin/kontur/releases/latest/download/Kontur-mac-apple.dmg">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg><span class="dl-l">Скачать для&nbsp;Mac</span></a>
     </div>
+    <p class="dl-alt reveal" style="--d:.27s" data-dl-alt>Другие варианты: <a href="https://github.com/fotomagazin/kontur/releases/latest/download/Kontur-mac-intel.dmg">Mac с&nbsp;Intel</a> · <a href="https://github.com/fotomagazin/kontur/releases/latest/download/Kontur-windows-setup.exe">Windows</a> · <a href="https://github.com/fotomagazin/kontur/releases/latest/download/kontur.zip">Браузерная версия</a></p>
     <p class="dl-count" hidden><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg><b>0</b>&nbsp;<span>скачиваний</span></p>
-    <p class="fine reveal" style="--d:.3s">Бета-версия <span data-ver>0.1</span> · Mac и Windows · Без установки · Без регистрации</p>
+    <p class="fine reveal" style="--d:.3s">Бета-версия <span data-ver>0.2</span> · Mac и Windows · Работает без&nbsp;интернета · Без регистрации</p>
   </div>
   <div class="hero-stage">
     <div class="glow" aria-hidden="true"></div>
     <div class="window" id="heroWin">
       <div class="bar"><i></i><i></i><i></i><span>Кофейня.kontur — Контур</span></div>
-      <img src="../assets/kontur/hero.jpg?v=1" width="2880" height="1800" alt="Окно Контура: вывеска кофейни — чашка, пар, надпись «КОФЕЙНЯ», QR-код и направляющие">
+      <img src="../assets/kontur/hero.jpg?v=2" width="2880" height="1800" alt="Окно Контура: вывеска кофейни — чашка, пар, надпись «КОФЕЙНЯ», QR-код и направляющие">
     </div>
   </div>
 </header>
@@ -68,6 +69,36 @@
   <div class="stat reveal" style="--d:.24s"><b data-count="0" data-suffix=" ₽">0 ₽</b><span>стоит программа.<br>Навсегда.</span></div>
 </section>
 
+<!-- ========== программа для Mac и Windows (новое в 0.2) ========== -->
+<section class="feature center" id="get">
+  <div class="wrap">
+    <p class="eyebrow reveal">Новое в&nbsp;0.2 · Программа для&nbsp;Mac и&nbsp;Windows</p>
+    <h2 class="reveal" style="--d:.05s">Настоящая программа.<br>Своё окно, свои файлы.</h2>
+    <p class="body narrow reveal" style="--d:.1s">Контур ставится, как обычная программа: свой значок и&nbsp;меню, проекты .kontur открываются двойным щелчком, «Сохранить» записывает прямо в&nbsp;файл. Шестнадцать шрифтов и&nbsp;все модули уже внутри — поэтому Контур работает без&nbsp;интернета.</p>
+    <div class="platforms">
+      <div class="plat reveal" data-os="mac"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+        <h3>Mac</h3><p>macOS, процессоры Apple (M1–M4) и&nbsp;Intel. Перетащите Контур в&nbsp;«Программы».</p>
+        <div class="plat-b"><a class="btn" href="https://github.com/fotomagazin/kontur/releases/latest/download/Kontur-mac-apple.dmg"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Mac — Apple M1–M4</a><a class="btn ghost" href="https://github.com/fotomagazin/kontur/releases/latest/download/Kontur-mac-intel.dmg">Mac с&nbsp;Intel</a></div>
+        <span class="plat-s">≈&nbsp;125&nbsp;МБ · файл .dmg</span></div>
+      <div class="plat reveal" style="--d:.08s" data-os="win"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <h3>Windows</h3><p>Windows 10 и&nbsp;11 (64&nbsp;бит). Установка в&nbsp;один щелчок, ярлык на&nbsp;рабочем столе.</p>
+        <div class="plat-b"><a class="btn" href="https://github.com/fotomagazin/kontur/releases/latest/download/Kontur-windows-setup.exe"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Скачать для&nbsp;Windows</a></div>
+        <span class="plat-s">≈&nbsp;115&nbsp;МБ · файл .exe</span></div>
+      <div class="plat reveal" style="--d:.16s" data-os="web"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <h3>Браузерная версия</h3><p>Любой компьютер, в&nbsp;том числе Linux. Тот же Контур в&nbsp;одном файле kontur.html — лучше в&nbsp;Chrome или&nbsp;Edge.</p>
+        <div class="plat-b"><a class="btn ghost" href="https://github.com/fotomagazin/kontur/releases/latest/download/kontur.zip"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Скачать архив</a></div>
+        <span class="plat-s">меньше 100&nbsp;КБ · файл .zip</span></div>
+    </div>
+    <ul class="checks two reveal">
+      <li>Проекты .kontur — двойным щелчком в&nbsp;Finder и&nbsp;Проводнике</li>
+      <li>«Сохранить» прямо в&nbsp;файл, ⌘S или&nbsp;Ctrl+S</li>
+      <li>Без интернета: шрифты, «Сложить / Вычесть» и&nbsp;импорт PDF внутри</li>
+      <li>Сама подскажет, когда выйдет новая версия</li>
+    </ul>
+    <p class="hint reveal">Программы пока без&nbsp;платной подписи Apple и&nbsp;Microsoft — в&nbsp;первый раз система переспросит. <a class="inl" href="#first">Как открыть в&nbsp;первый раз</a></p>
+  </div>
+</section>
+
 <!-- ========== текст ========== -->
 <section class="feature center" id="text">
   <div class="wrap">
@@ -76,7 +107,7 @@
     <p class="body narrow reveal" style="--d:.1s">Кликните по&nbsp;странице и&nbsp;печатайте. Шестнадцать шрифтов с&nbsp;кириллицей — от&nbsp;строгого Montserrat до&nbsp;рукописного Great Vibes, а&nbsp;можно загрузить свой. Готово — нажмите «В&nbsp;кривые», и&nbsp;буквы станут контурами для&nbsp;плоттера, лазера или&nbsp;типографии.</p>
     <div class="window wide-shot reveal" style="--d:.15s">
       <div class="bar"><i></i><i></i><i></i><span>Афиша.kontur — Контур</span></div>
-      <img src="../assets/kontur/text.jpg?v=1" width="2880" height="1800" alt="Афиша с надписями разными шрифтами; справа — раздел «Текст»: шрифт, размер, начертание, интервалы и кнопка «В кривые»" loading="lazy">
+      <img src="../assets/kontur/text.jpg?v=2" width="2880" height="1800" alt="Афиша с надписями разными шрифтами; справа — раздел «Текст»: шрифт, размер, начертание, интервалы и кнопка «В кривые»" loading="lazy">
     </div>
     <div class="fonts kt-fonts reveal"><span style="font-family:Unbounded">Unbounded</span><span style="font-family:'Russo One'">Russo One</span><span class="lg" style="font-family:Lobster">Lobster</span><span class="lg" style="font-family:'Great Vibes'">Great Vibes</span><span class="lg" style="font-family:Caveat">Caveat</span><span style="font-family:'Playfair Display';font-style:italic">Playfair Display</span><span>Montserrat</span><span>Roboto</span><span>PT Sans</span><span>Oswald</span><span>Rubik</span><span>Exo 2</span><span>Comfortaa</span><span>Open Sans</span><span>PT Serif</span><span>Marck Script</span><span class="on">+ свой шрифт</span></div>
     <p class="hint reveal">Размер — в&nbsp;пунктах, как в&nbsp;типографии. Межстрочный и&nbsp;межбуквенный интервал, выравнивание, жирный и&nbsp;курсив.</p>
@@ -98,7 +129,7 @@
       </ul>
     </div>
     <div class="shot-stack reveal" style="--d:.1s">
-      <div class="card zoom"><img src="../assets/kontur/nodes.jpg?v=1" width="2160" height="1556" alt="Сердце из кривых Безье: узлы и рычаги выбранного узла, внизу — волна пером" loading="lazy"></div>
+      <div class="card zoom"><img src="../assets/kontur/nodes.jpg?v=2" width="2160" height="1556" alt="Сердце из кривых Безье: узлы и рычаги выбранного узла, внизу — волна пером" loading="lazy"></div>
       <div class="tag t1"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>Перо — F5, узлы — F10</div>
       <div class="tag t2"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M6 9c0 6 6 9 12 6"/></svg>Клавиши как в&nbsp;CorelDRAW</div>
     </div>
@@ -115,7 +146,7 @@
       <div class="chips reveal" style="--d:.15s"><span>Прямоугольник · F6</span><span>Эллипс · F7</span><span>Многоугольник</span><span class="on">Звезда</span><span>Пипетка</span></div>
     </div>
     <div class="shot-stack reveal" style="--d:.1s">
-      <div class="card zoom"><img src="../assets/kontur/shapes.jpg?v=1" width="2272" height="1728" alt="Прямоугольник, эллипс, шестиугольник и звезда; вверху — число лучей и глубина звезды" loading="lazy"></div>
+      <div class="card zoom"><img src="../assets/kontur/shapes.jpg?v=2" width="2272" height="1728" alt="Прямоугольник, эллипс, шестиугольник и звезда; вверху — число лучей и глубина звезды" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -143,7 +174,7 @@
     </div>
     <p class="hint reveal">Нажмите на&nbsp;операцию, чтобы посмотреть</p>
     <div class="duo">
-      <figure class="card reveal"><img src="../assets/kontur/bool.jpg?v=1" width="606" height="642" alt="Раздел «Кривая»: заливка, обводка и кнопки «Сложить», «Вычесть», «Пересечь», «Исключить», «Объединить», «Разъединить»" loading="lazy">
+      <figure class="card reveal"><img src="../assets/kontur/bool.jpg?v=2" width="606" height="642" alt="Раздел «Кривая»: заливка, обводка и кнопки «Сложить», «Вычесть», «Пересечь», «Исключить», «Объединить», «Разъединить»" loading="lazy">
         <figcaption><b>Одна кнопка.</b> Выберите две фигуры или&nbsp;больше — и&nbsp;нажмите нужную операцию в&nbsp;разделе «Кривая».</figcaption></figure>
       <figure class="card reveal st-list" style="--d:.1s">
         <ul class="checks">
@@ -186,7 +217,7 @@
     <p class="body narrow reveal" style="--d:.1s">Всё меряется в&nbsp;миллиметрах: страница A5, A4, A3 или&nbsp;свой размер. Тяните направляющие от&nbsp;линеек, включите сетку — а&nbsp;привязка сама прилепит фигуру к&nbsp;направляющей, краю или&nbsp;центру страницы, к&nbsp;соседнему объекту и&nbsp;его узлам. Розовые линии показывают, к&nbsp;чему прилипло.</p>
     <div class="window wide-shot reveal" style="--d:.15s">
       <div class="bar"><i></i><i></i><i></i><span>Кофейня.kontur — Контур</span></div>
-      <img src="../assets/kontur/snap.jpg?v=1" width="2880" height="1800" alt="Чашку перетаскивают мышью: розовые линии привязки к направляющей и центру страницы, сверху и слева — линейки в миллиметрах" loading="lazy">
+      <img src="../assets/kontur/snap.jpg?v=2" width="2880" height="1800" alt="Чашку перетаскивают мышью: розовые линии привязки к направляющей и центру страницы, сверху и слева — линейки в миллиметрах" loading="lazy">
     </div>
     <div class="chips st-chips reveal"><span>Линейки в&nbsp;мм</span><span>Направляющие — тянуть от&nbsp;линейки</span><span>Сетка с&nbsp;любым шагом</span><span class="on">Привязка к&nbsp;узлам и&nbsp;краям</span><span>Стрелки — сдвиг на&nbsp;1&nbsp;мм</span></div>
   </div>
@@ -202,7 +233,7 @@
       <div class="chips reveal" style="--d:.15s"><span>Сайт</span><span class="on">Wi-Fi</span><span>Визитка</span><span>Telegram</span><span>WhatsApp</span><span>Телефон</span><span>SMS</span><span>E-mail</span><span>Текст</span><span>Геолокация</span><span>Событие в&nbsp;календарь</span></div>
     </div>
     <div class="shot-stack reveal" style="--d:.1s">
-      <div class="card zoom"><img src="../assets/kontur/qr.jpg?v=1" width="1376" height="1000" alt="Окно «QR-код»: подключение к Wi-Fi, имя сети и пароль, размер в миллиметрах, коррекция ошибок, цвета и предпросмотр" loading="lazy"></div>
+      <div class="card zoom"><img src="../assets/kontur/qr.jpg?v=2" width="1376" height="1000" alt="Окно «QR-код»: подключение к Wi-Fi, имя сети и пароль, размер в миллиметрах, коррекция ошибок, цвета и предпросмотр" loading="lazy"></div>
       <div class="tag t1"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 17h3v3h-3z"/></svg>Вектор, а&nbsp;не&nbsp;картинка</div>
       <div class="tag t2"><svg viewBox="0 0 24 24"><path d="M12 20h.01M2 8.82a15 15 0 0 1 20 0M5 12.86a10 10 0 0 1 14 0M8.5 16.43a5 5 0 0 1 7 0"/></svg>Гости подключатся к&nbsp;Wi-Fi</div>
     </div>
@@ -223,8 +254,30 @@
       </ul>
     </div>
     <div class="shot-stack reveal" style="--d:.1s">
-      <div class="card zoom"><img src="../assets/kontur/trace.jpg?v=1" width="2160" height="1556" alt="Фото гор закреплено и сделано полупрозрачным, поверх — розовый контур вершины с узлами" loading="lazy"></div>
+      <div class="card zoom"><img src="../assets/kontur/trace.jpg?v=2" width="2160" height="1556" alt="Фото гор закреплено и сделано полупрозрачным, поверх — розовый контур вершины с узлами" loading="lazy"></div>
       <div class="tag t2"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Фото закреплено — не&nbsp;сдвинется</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== импорт .ai и PDF (новое в 0.2) ========== -->
+<section class="feature" id="import">
+  <div class="wrap grid2 rev">
+    <div class="copy">
+      <p class="eyebrow reveal">Новое в&nbsp;0.2 · Импорт</p>
+      <h2 class="reveal" style="--d:.05s">.ai и&nbsp;PDF —<br>сразу кривыми.</h2>
+      <p class="body reveal" style="--d:.1s">Откройте .ai или&nbsp;PDF — и&nbsp;каждый контур станет обычной кривой Контура: двигайте узлы, перекрашивайте, готовьте к&nbsp;резке. Текст приходит буквами-кривыми, так что нужный шрифт на&nbsp;компьютере не&nbsp;нужен.</p>
+      <ul class="checks reveal" style="--d:.15s">
+        <li>Контуры, цвета, обводки и&nbsp;прозрачность</li>
+        <li>Текст — кривыми букв, как в&nbsp;исходном файле</li>
+        <li>Фото внутри файла пропускаются, градиенты — средним цветом</li>
+      </ul>
+      <p class="note reveal" style="--d:.2s"><b>А&nbsp;CorelDRAW?</b> Формат .cdr закрытый, напрямую его не&nbsp;открыть. В&nbsp;CorelDRAW: «Файл → Экспорт… → PDF» — и&nbsp;откройте PDF в&nbsp;Контуре. Без CorelDRAW поможет бесплатный Inkscape.</p>
+    </div>
+    <div class="shot-stack reveal" style="--d:.1s">
+      <div class="card zoom"><img src="../assets/kontur/import.jpg?v=2" width="2880" height="1800" alt="Вывеска, открытая из PDF: 11 объектов, все — кривые Контура" loading="lazy"></div>
+      <div class="tag t1"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>.ai и&nbsp;.pdf</div>
+      <div class="tag t2"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M6 9c0 6 6 9 12 6"/></svg>11 объектов — все кривые</div>
     </div>
   </div>
 </section>
@@ -245,7 +298,7 @@
       </dl>
     </div>
     <div class="shot-stack reveal" style="--d:.1s">
-      <div class="card zoom"><img src="../assets/kontur/export.jpg?v=1" width="1060" height="800" alt="Окно «Экспорт»: форматы SVG, PDF, EPS, DXF, PNG, размер 200 × 130 мм и вес файла" loading="lazy"></div>
+      <div class="card zoom"><img src="../assets/kontur/export.jpg?v=2" width="1060" height="800" alt="Окно «Экспорт»: форматы SVG, PDF, EPS, DXF, PNG, размер 200 × 130 мм и вес файла" loading="lazy"></div>
       <div class="tag t1"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Вес файла — заранее</div>
     </div>
   </div>
@@ -257,8 +310,8 @@
     <h2 class="reveal center-t">И это ещё не&nbsp;всё.</h2>
     <div class="bento">
       <div class="b-card wide with-shot reveal"><div><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="10" cy="12" r="2"/><path d="m20 17-1.3-1.3a2 2 0 0 0-2.8 0L10 22"/></svg>
-        <h3>Подскажет, с&nbsp;чего начать.</h3><p>На&nbsp;пустой странице — кнопки «Фото или&nbsp;логотип», «Перо», «Фигуры», «Текст», «QR-код» и&nbsp;главные клавиши. Картинку можно просто перетащить в&nbsp;окно или&nbsp;вставить из&nbsp;буфера.</p></div>
-        <img class="b-shot" src="../assets/kontur/empty.jpg?v=1" width="940" height="700" alt="Подсказка «Пустая страница — с чего начать?»" loading="lazy"></div>
+        <h3>Подскажет, с&nbsp;чего начать.</h3><p>На&nbsp;пустой странице — кнопки «Импорт», «Перо», «Фигуры», «Текст», «QR-код» и&nbsp;главные клавиши. Картинку можно просто перетащить в&nbsp;окно или&nbsp;вставить из&nbsp;буфера.</p></div>
+        <img class="b-shot" src="../assets/kontur/empty.jpg?v=2" width="940" height="700" alt="Подсказка «Пустая страница — с чего начать?»" loading="lazy"></div>
       <div class="b-card reveal" style="--d:.06s"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
         <h3>Автосохранение.</h3><p>Закрыли вкладку? При&nbsp;следующем запуске Контур предложит вернуть работу.</p></div>
       <div class="b-card reveal"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg>
@@ -280,7 +333,7 @@
 <section class="together" id="together">
   <div class="wrap">
     <div class="center">
-      <p class="eyebrow reveal">Бета-версия <span data-ver>0.1</span></p>
+      <p class="eyebrow reveal">Бета-версия <span data-ver>0.2</span></p>
       <h2 class="reveal" style="--d:.05s">Контур создаётся<br>вместе с&nbsp;вами.</h2>
       <p class="body narrow reveal" style="--d:.1s">Это ранняя версия: основа уже работает, но&nbsp;многого ещё нет, а&nbsp;что-то может сломаться. Расскажите, чего вам не&nbsp;хватает, — автор читает каждое сообщение. Бот и&nbsp;канал у&nbsp;Контура и&nbsp;Фотомагазина общие.</p>
     </div>
@@ -295,7 +348,8 @@
       <p class="reveal" style="--d:.05s">Идеи, которые уже на&nbsp;очереди. Голосуйте в&nbsp;опросах нашего канала — самые нужные появятся первыми.</p>
       <ul class="road reveal" style="--d:.1s">
         <li class="done">Текст и&nbsp;«В&nbsp;кривые» <em>готово в&nbsp;0.1</em></li><li class="done">Сложить и&nbsp;вычесть <em>готово в&nbsp;0.1</em></li><li class="done">Привязка и&nbsp;направляющие <em>готово в&nbsp;0.1</em></li>
-        <li>Группы</li><li>Открывать SVG и&nbsp;PDF кривыми</li><li>Контур по&nbsp;фото одной кнопкой</li><li>Градиенты</li><li>Пунктир и&nbsp;отступ контура для&nbsp;резки</li>
+        <li class="done">Программа для&nbsp;Mac и&nbsp;Windows <em>готово в&nbsp;0.2</em></li><li class="done">Открывать .ai и&nbsp;PDF кривыми <em>готово в&nbsp;0.2</em></li>
+        <li>Группы</li><li>Открывать SVG кривыми</li><li>Контур по&nbsp;фото одной кнопкой</li><li>Градиенты</li><li>Пунктир и&nbsp;отступ контура для&nbsp;резки</li>
         <li>Метки реза и&nbsp;CMYK</li><li>Несколько страниц</li><li>Английская версия</li><li class="you">+ ваша идея</li>
       </ul>
     </div>
@@ -307,25 +361,26 @@
   <div class="wrap center">
     <div class="lock reveal"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
     <h2 class="reveal" style="--d:.05s">Ваши макеты<br>остаются у&nbsp;вас.</h2>
-    <p class="body narrow reveal" style="--d:.1s">Контур работает прямо на&nbsp;вашем компьютере, в&nbsp;браузере. Никаких серверов, облака и&nbsp;аккаунтов — логотипы, фото и&nbsp;макеты никуда не&nbsp;загружаются.</p>
+    <p class="body narrow reveal" style="--d:.1s">Контур работает прямо на&nbsp;вашем компьютере. Никаких серверов, облака и&nbsp;аккаунтов — логотипы, фото и&nbsp;макеты никуда не&nbsp;загружаются.</p>
   </div>
 </section>
 
 <!-- ========== скачать ========== -->
 <section class="download" id="download">
   <div class="wrap center">
-    <img class="klogo big reveal" src="../assets/kontur/icon.svg?v=1" width="96" height="96" alt="">
+    <img class="klogo big reveal" src="../assets/kontur/icon.svg?v=2" width="96" height="96" alt="">
     <h2 class="reveal" style="--d:.05s">Начните прямо сейчас.</h2>
-    <p class="body narrow reveal" style="--d:.1s">Бесплатно. Без регистрации. Архив меньше 100&nbsp;КБ — программа и&nbsp;короткая инструкция.</p>
-    <p class="fine reveal" style="--d:.12s">Бета-версия <span data-ver>0.1</span>. Нашли ошибку или&nbsp;чего-то не&nbsp;хватает? <a class="inl" data-form="idea" href="#together">Напишите нам</a>.</p>
+    <p class="body narrow reveal" style="--d:.1s">Бесплатно. Без регистрации. Программа для&nbsp;Mac и&nbsp;Windows — или&nbsp;браузерная версия в&nbsp;одном файле.</p>
+    <p class="fine reveal" style="--d:.12s">Бета-версия <span data-ver>0.2</span>. Нашли ошибку или&nbsp;чего-то не&nbsp;хватает? <a class="inl" data-form="idea" href="#together">Напишите нам</a>.</p>
     <div class="cta reveal" style="--d:.15s">
-      <a class="btn btn-lg" href="https://github.com/fotomagazin/kontur/releases/latest/download/kontur.zip">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Скачать Контур</a>
+      <a class="btn btn-lg" data-dl="main" href="https://github.com/fotomagazin/kontur/releases/latest/download/Kontur-mac-apple.dmg">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg><span class="dl-l">Скачать для&nbsp;Mac</span></a>
     </div>
+    <p class="dl-alt reveal" data-dl-alt>Другие варианты: <a href="https://github.com/fotomagazin/kontur/releases/latest/download/Kontur-mac-intel.dmg">Mac с&nbsp;Intel</a> · <a href="https://github.com/fotomagazin/kontur/releases/latest/download/Kontur-windows-setup.exe">Windows</a> · <a href="https://github.com/fotomagazin/kontur/releases/latest/download/kontur.zip">Браузерная версия</a></p>
     <p class="dl-count" hidden><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg><b>0</b>&nbsp;<span>скачиваний</span></p>
     <ol class="steps">
-      <li class="reveal"><b>1</b><h3>Скачайте</h3><p>Архив с&nbsp;программой и&nbsp;инструкцией «Как пользоваться».</p></li>
-      <li class="reveal" style="--d:.08s"><b>2</b><h3>Откройте</h3><p>Распакуйте архив и&nbsp;откройте kontur.html — программа запустится в&nbsp;браузере.</p></li>
+      <li class="reveal"><b>1</b><h3>Скачайте</h3><p>Установщик для&nbsp;вашего компьютера — Mac или&nbsp;Windows.</p></li>
+      <li class="reveal" style="--d:.08s"><b>2</b><h3>Установите</h3><p>Mac: перетащите Контур в&nbsp;«Программы». Windows: установка в&nbsp;один щелчок. <a class="inl" href="#first">Первый запуск</a> — один раз подтвердить.</p></li>
       <li class="reveal" style="--d:.16s"><b>3</b><h3>Рисуйте</h3><p>Перетащите логотип, возьмите перо или&nbsp;вставьте QR-код. Всё остальное уже внутри.</p></li>
     </ol>
   </div>
@@ -336,13 +391,16 @@
   <div class="wrap narrow-w">
     <h2 class="reveal center-t">Вопросы и&nbsp;ответы.</h2>
     <details class="reveal"><summary>Для чего подходит Контур?</summary><p>Для&nbsp;всего, где нужны чистые контуры, а&nbsp;не&nbsp;пиксели: вывески и&nbsp;таблички, наклейки и&nbsp;трафареты, файлы для&nbsp;режущего плоттера, лазера и&nbsp;фрезера, логотипы, визитки и&nbsp;листовки для&nbsp;типографии, QR-коды для&nbsp;меню и&nbsp;упаковки.</p></details>
-    <details class="reveal"><summary>Чем Контур отличается от&nbsp;Фотомагазина?</summary><p>Фотомагазин работает с&nbsp;фотографиями — пикселями и&nbsp;слоями. Контур — с&nbsp;векторами: линиями и&nbsp;кривыми, которые можно увеличить до&nbsp;любого размера без&nbsp;потери качества. Это две отдельные программы, у&nbsp;каждой свой файл, но&nbsp;дизайн, бот и&nbsp;канал у&nbsp;них общие.</p></details>
+    <details class="reveal"><summary>Чем Контур отличается от&nbsp;Фотомагазина?</summary><p>Фотомагазин работает с&nbsp;фотографиями — пикселями и&nbsp;слоями. Контур — с&nbsp;векторами: линиями и&nbsp;кривыми, которые можно увеличить до&nbsp;любого размера без&nbsp;потери качества. Это две отдельные программы со&nbsp;своими версиями, но&nbsp;дизайн, бот и&nbsp;канал у&nbsp;них общие.</p></details>
     <details class="reveal"><summary>Почему «бета»?</summary><p>Контур только начинает свой путь. Всё, что описано на&nbsp;этой странице, уже работает, но&nbsp;программа ещё развивается: будут появляться новые инструменты, а&nbsp;иногда — встречаться ошибки. Ваши отзывы помогают решить, что делать в&nbsp;первую очередь.</p></details>
-    <details class="reveal"><summary>Какие файлы он сохраняет?</summary><p>Проект — в&nbsp;файл .kontur со&nbsp;всем содержимым. Для&nbsp;работы — экспорт в&nbsp;SVG, PDF, EPS, DXF и&nbsp;PNG. Фото попадают в&nbsp;SVG, PDF и&nbsp;PNG; в&nbsp;EPS и&nbsp;DXF уходят только векторы — об&nbsp;этом окно «Экспорт» предупредит.</p></details>
+    <details class="reveal" id="first"><summary>Как открыть в&nbsp;первый раз?</summary><p>Программы пока без&nbsp;платной подписи Apple и&nbsp;Microsoft, поэтому при&nbsp;первом запуске система переспросит — один раз.<br><b>Mac:</b> откройте Контур двойным щелчком → появится «Не удалось проверить…» → нажмите «Готово» → откройте «Системные настройки» → «Конфиденциальность и&nbsp;безопасность» → внизу «Контур заблокирован…» → «Открыть всё равно» и&nbsp;введите пароль Mac.<br><b>Windows:</b> запустите установщик → в&nbsp;синем окне «Windows защитил ваш компьютер» нажмите «Подробнее» → «Выполнить в&nbsp;любом случае».</p></details>
+    <details class="reveal"><summary>Какие файлы он открывает и&nbsp;сохраняет?</summary><p>Открывает свои проекты .kontur, файлы Illustrator (.ai) и&nbsp;PDF — кривыми, а&nbsp;ещё картинки JPG, PNG, WebP, SVG, HEIC и&nbsp;TIFF — их удобно обводить. Сохраняет проект в&nbsp;.kontur, а&nbsp;для&nbsp;работы — экспорт в&nbsp;SVG, PDF, EPS, DXF и&nbsp;PNG. Фото попадают в&nbsp;SVG, PDF и&nbsp;PNG; в&nbsp;EPS и&nbsp;DXF уходят только векторы — об&nbsp;этом окно «Экспорт» предупредит.</p></details>
+    <details class="reveal"><summary>А&nbsp;файлы CorelDRAW (.cdr)?</summary><p>Напрямую — нет: это закрытый формат Corel. В&nbsp;CorelDRAW выберите «Файл → Экспорт…» и&nbsp;сохраните в&nbsp;PDF (текст лучше заранее перевести в&nbsp;кривые — Ctrl+Q), затем откройте PDF в&nbsp;Контуре. Если CorelDRAW нет, файл .cdr откроет бесплатный Inkscape — сохраните из&nbsp;него PDF.</p></details>
     <details class="reveal"><summary>Это правда бесплатно?</summary><p>Да. Без пробного периода, подписок и&nbsp;рекламы.</p></details>
-    <details class="reveal"><summary>Нужно что-то устанавливать?</summary><p>Нет. Скачайте архив, распакуйте его двойным кликом и&nbsp;откройте kontur.html — программа запустится в&nbsp;браузере. Вся программа — это один этот файл, а&nbsp;рядом лежит короткая инструкция.</p></details>
-    <details class="reveal"><summary>Работает без интернета?</summary><p>Почти всё — да. Интернет нужен, чтобы при&nbsp;первом использовании скачать шрифты для&nbsp;текста, модуль для&nbsp;«Сложить / Вычесть» и&nbsp;открыть TIFF или&nbsp;HEIC.</p></details>
-    <details class="reveal"><summary>В каком браузере лучше?</summary><p>Лучше всего — в&nbsp;Google Chrome или&nbsp;Microsoft Edge на&nbsp;Mac и&nbsp;Windows: там работают настоящие «Сохранить» и&nbsp;«Сохранить как».</p></details>
+    <details class="reveal"><summary>Какую версию выбрать?</summary><p>Для&nbsp;Mac и&nbsp;Windows — программу: своё окно, работа без&nbsp;интернета, «Сохранить» прямо в&nbsp;файл. Браузерная версия — тот же Контур в&nbsp;одном файле kontur.html: ничего не&nbsp;устанавливается, подойдёт для&nbsp;любого компьютера, в&nbsp;том числе с&nbsp;Linux. Распакуйте архив и&nbsp;откройте kontur.html двойным щелчком.</p></details>
+    <details class="reveal"><summary>Работает без интернета?</summary><p>Программа для&nbsp;Mac и&nbsp;Windows — полностью: шрифты и&nbsp;модули уже внутри. Браузерной версии интернет нужен один раз — чтобы скачать шрифты, модуль для&nbsp;«Сложить / Вычесть», импорт PDF и&nbsp;открыть TIFF или&nbsp;HEIC.</p></details>
+    <details class="reveal"><summary>Как обновиться?</summary><p>Кнопка «Версия» в&nbsp;верхней панели сама подскажет, что вышла новая версия, и&nbsp;скачает установщик для&nbsp;вашей системы. Запустите его — Контур обновится, а&nbsp;проекты и&nbsp;автосохранение останутся.</p></details>
+    <details class="reveal"><summary>В каком браузере лучше браузерная версия?</summary><p>В&nbsp;Google Chrome или&nbsp;Microsoft Edge: там работают настоящие «Сохранить» и&nbsp;«Сохранить как».</p></details>
     <details class="reveal"><summary>Как предложить идею или&nbsp;сообщить об&nbsp;ошибке?</summary><p>Через <a class="inl" data-form="idea" href="#together">короткую форму</a> или нашего <a class="inl" data-tg="bot" href="#together">Telegram-бота</a> — сообщение придёт напрямую автору. Или прямо из&nbsp;программы: кнопка «Обратная связь» в&nbsp;верхней панели. Новости — в&nbsp;<a class="inl" data-tg="channel" href="#together">Telegram-канале</a>.</p></details>
   </div>
 </section>
@@ -366,7 +424,7 @@
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <a class="brand" href="#top"><img class="klogo" src="../assets/kontur/icon.svg?v=1" alt="">Контур <span>· Contour</span></a>
+    <a class="brand" href="#top"><img class="klogo" src="../assets/kontur/icon.svg?v=2" alt="">Контур <span>· Contour</span></a>
     <p><a class="inl" href="../">Фотомагазин</a> · <a class="inl" data-tg="channel" href="#together">Канал в&nbsp;Telegram</a> · <a class="inl" data-tg="bot" href="#together">Написать автору</a> · © <span id="year">2026</span> Контур. Сделано для&nbsp;тех, кто печатает, режет и&nbsp;рисует.</p>
   </div>
 </footer>
